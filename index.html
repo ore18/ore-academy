@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ore Academy - Formation Plan d'Affaires</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#1a2332;line-height:1.7}
+#page-auth{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0f1729,#1a237e);display:flex;justify-content:center;align-items:center;z-index:9999;padding:20px;overflow-y:auto}
+.auth-box{background:#fff;padding:45px 40px;border-radius:20px;box-shadow:0 25px 70px rgba(0,0,0,.4);max-width:440px;width:100%;border-top:5px solid #f9a825}
+.logo-icon{display:inline-flex;align-items:center;justify-content:center;width:75px;height:75px;background:linear-gradient(135deg,#1a237e,#283593);border-radius:50%;color:#f9a825;font-size:38px;font-weight:bold;margin-bottom:15px}
+.auth-logo{text-align:center}
+.auth-box h1{color:#1a237e;margin-bottom:6px;font-size:28px;font-weight:800;text-align:center}
+.auth-box .sous-titre{color:#6b7280;margin-bottom:30px;font-size:12px;text-align:center;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.auth-box input{width:100%;padding:14px 16px;font-size:15px;border:2px solid #e5e7eb;border-radius:10px;margin-bottom:14px;background:#f9fafb}
+.auth-box input:focus{outline:none;border-color:#1a237e;background:#fff}
+.auth-box button{width:100%;padding:15px;font-size:15px;background:linear-gradient(135deg,#1a237e,#283593);color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;margin-top:10px}
+.auth-box .lien{color:#1a237e;cursor:pointer;font-size:13px;margin-top:15px;display:block;text-align:center;font-weight:600;text-decoration:underline}
+.lien-admin{margin-top:20px;padding-top:15px;border-top:1px dashed #d1d5db;text-align:center}
+.lien-admin button{background:none;border:2px solid #f9a825;color:#1a237e;font-size:12px;cursor:pointer;font-weight:700;padding:8px 16px;border-radius:8px;width:auto;margin:0 auto;display:inline-block}
+.erreur{color:#dc2626;margin-top:12px;font-size:13px;display:none;text-align:center;padding:10px;background:#fee2e2;border-radius:8px;font-weight:600}
+.succes{color:#059669;margin-top:12px;font-size:13px;display:none;text-align:center;padding:10px;background:#d1fae5;border-radius:8px;font-weight:600}
+header{background:linear-gradient(135deg,#0f1729,#1a237e);color:#fff;padding:30px 20px;text-align:center;position:relative;border-bottom:4px solid #f9a825}
+header h1{font-size:26px;margin-bottom:6px;font-weight:800}
+header .or{color:#f9a825}
+header p{font-size:13px;opacity:.9;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.user-info{position:absolute;top:20px;right:25px;background:rgba(249,168,37,.2);padding:8px 16px;border-radius:25px;font-size:12px;font-weight:600;border:1px solid rgba(249,168,37,.4);color:#f9a825}
+.btn-deconnexion{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:15px;font-size:11px;cursor:pointer;margin-left:8px;font-weight:600}
+.conteneur{display:flex;max-width:1280px;margin:25px auto;padding:0 25px;gap:25px}
+.contenu{flex:1;min-width:0}
+nav.vertical{width:260px;background:#fff;border-radius:16px;padding:20px;height:fit-content;position:sticky;top:20px;border:1px solid #e5e7eb}
+nav.vertical h3{color:#1a237e;font-size:12px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #f9a825;text-transform:uppercase;letter-spacing:1.5px;font-weight:800}
+nav.vertical button{display:block;width:100%;padding:11px 14px;margin-bottom:6px;background:#fff;color:#4b5563;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;text-align:left}
+nav.vertical button.active{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;border-color:#1a237e}
+.module{background:#fff;border-radius:16px;padding:35px;margin-bottom:25px;border:1px solid #e5e7eb}
+.module h2{color:#1a237e;border-bottom:3px solid #f9a825;padding-bottom:15px;margin-bottom:25px;font-size:24px;font-weight:800}
+.module h3{color:#1a237e;margin-top:25px;margin-bottom:12px;font-size:18px;font-weight:700}
+.module p{margin-bottom:14px}
+.module ul,.module ol{padding-left:25px;margin-bottom:14px}
+.module li{margin-bottom:8px}
+.module strong{color:#1a237e}
+.salle-classe{background:linear-gradient(180deg,#fff,#f0f4f9);border-radius:16px;padding:25px;margin-bottom:25px;border:1px solid #e5e7eb}
+.tableau-noir{background:linear-gradient(135deg,#1a2332,#2d3748);color:#fff;padding:25px;border-radius:12px;margin-bottom:25px;text-align:center;border:6px solid #8d6e63;min-height:100px;display:flex;align-items:center;justify-content:center}
+.tableau-noir p{font-size:17px;font-style:italic;font-family:Georgia,serif}
+.formateur-zone{display:flex;align-items:flex-end;justify-content:center;margin-bottom:20px;gap:20px}
+.formateur{display:flex;flex-direction:column;align-items:center;gap:8px}
+.formateur img{width:110px;height:110px;background:#fff;border-radius:50%;padding:8px;border:4px solid #1a237e}
+.formateur .badge{background:#1a237e;color:#f9a825;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700}
+.bulle-formateur{background:#fff;border:2px solid #1a237e;padding:14px 20px;border-radius:15px;font-style:italic;font-size:14px;max-width:400px}
+.eleves-zone{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;padding:15px 0}
+.eleve{display:flex;flex-direction:column;align-items:center;gap:5px;opacity:.85}
+.eleve img{width:70px;height:70px;background:#fff;border-radius:50%;padding:4px;border:3px solid #e5e7eb}
+.eleve span{font-size:11px;color:#6b7280;font-weight:600}
+.encadre{background:#fff8e1;border-left:5px solid #f9a825;padding:18px 22px;border-radius:8px;margin:20px 0;font-weight:500;color:#78350f}
+.lexique{background:#eff6ff;border-left:5px solid #2563eb;padding:18px 22px;border-radius:8px;margin:20px 0;color:#1e40af}
+.jeu{background:#f0f4f9;border:2px dashed #1a237e;border-radius:16px;padding:28px;margin-top:25px}
+.jeu h3{color:#1a237e;margin-top:0;font-weight:800}
+.cache{display:none !important}
+button.action{padding:12px 26px;background:#1a237e;color:#fff;border:none;border-radius:10px;cursor:pointer;font-size:14px;font-weight:700;margin:8px 6px 8px 0}
+button.action:disabled{background:#cbd5e0;cursor:not-allowed}
+.message{padding:14px 18px;border-radius:10px;margin-top:15px;font-weight:600;display:none}
+.message.succes{display:block;background:#d1fae5;color:#065f46}
+.message.erreur{display:block;background:#fee2e2;color:#991b1b}
+.question{background:#f9fafb;border-radius:12px;padding:20px;margin:18px 0;border:1px solid #e5e7eb}
+.question .enonce{font-weight:700;margin-bottom:14px;font-size:15px}
+.question .choix{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.question .choix label{padding:12px 16px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;font-weight:500}
+.question .choix input{margin-right:12px}
+.question input[type=number]{padding:10px 14px;border:2px solid #e5e7eb;border-radius:10px;width:220px;font-size:14px}
+.feedback{padding:14px 18px;border-radius:10px;margin-top:12px;font-weight:600;display:none}
+.feedback.bon{display:block;background:#d1fae5;color:#065f46;border-left:5px solid #059669}
+.feedback.mauvais{display:block;background:#fee2e2;color:#991b1b;border-left:5px solid #dc2626}
+.correction{display:none}
+.correction.visible{display:block;background:#e8f5e9;border-left:5px solid #059669;padding:18px 22px;border-radius:8px;margin:15px 0;color:#065f46}
+.btn-correction{padding:12px 26px;background:linear-gradient(135deg,#f9a825,#f57f17);color:#fff;border:none;border-radius:10px;cursor:pointer;font-size:14px;font-weight:700;margin:15px 0}
+footer{text-align:center;padding:35px;color:#6b7280;font-size:13px;border-top:1px solid #e5e7eb;margin-top:40px}
+footer .or{color:#f9a825;font-weight:700}
+#page-admin{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0f1729,#1a237e);z-index:9999;padding:20px;overflow-y:auto;display:none}
+.admin-container{max-width:950px;margin:0 auto}
+.admin-box{background:#fff;padding:35px;border-radius:16px;margin-bottom:20px;border-top:5px solid #f9a825}
+.admin-box h1{color:#1a237e;margin-bottom:8px;font-size:24px;font-weight:800}
+.admin-box h2{color:#1a237e;margin-bottom:18px;font-size:18px;font-weight:700;border-bottom:2px solid #f9a825;padding-bottom:10px}
+.admin-box input{width:100%;padding:13px 16px;font-size:15px;border:2px solid #e5e7eb;border-radius:10px;margin-bottom:14px}
+.admin-box button{padding:13px 24px;font-size:14px;background:#1a237e;color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;margin-right:8px;margin-bottom:8px}
+.admin-box button.rouge{background:#dc2626}
+.admin-box button.vert{background:#059669}
+.info-box{background:#eff6ff;border-left:4px solid #2563eb;padding:14px;border-radius:8px;margin:15px 0;font-size:13px;color:#1e40af}
+.code-actuel{background:#fff8e1;padding:20px;border-radius:12px;text-align:center;margin:15px 0;font-family:monospace;font-size:26px;font-weight:bold;color:#1a237e;letter-spacing:5px;border:3px dashed #f9a825}
+.tableau-admin{width:100%;border-collapse:collapse;margin-top:15px;font-size:13px}
+.tableau-admin th,.tableau-admin td{padding:12px;border:1px solid #e5e7eb;text-align:left}
+.tableau-admin th{background:#1a237e;color:#fff;font-weight:700}
+.demande-item{background:#fff8e1;border-left:5px solid #f9a825;padding:15px;margin-bottom:10px;border-radius:8px}
+.telecharger-bloc{background:#e8f5e9;border:2px solid #059669;border-radius:14px;padding:25px;margin:20px 0;text-align:center}
+.btn-simulateur{display:inline-block;padding:16px 35px;background:linear-gradient(135deg,#1a237e,#283593);color:#fff;text-decoration:none;border-radius:12px;font-size:16px;font-weight:800;box-shadow:0 6px 20px rgba(26,35,126,.3);margin:10px 5px 0}
+@media(max-width:800px){.conteneur{flex-direction:column}nav.vertical{width:100%;position:static}.formateur img{width:80px;height:80px}.user-info{position:static;margin-top:12px;display:inline-block}}
+</style>
+</head>
+<body>
+
+<div id="page-auth">
+  <div class="auth-box" id="box-connexion">
+    <div class="auth-logo"><div class="logo-icon">O</div></div>
+    <h1>Or&eacute; Academy</h1>
+    <p class="sous-titre">Formation Plan d&rsquo;Affaires</p>
+    <input type="text" id="login-nom" placeholder="Nom complet">
+    <input type="email" id="login-email" placeholder="Email">
+    <input type="password" id="login-mdp" placeholder="Mot de passe (min. 4 caract&egrave;res)">
+    <input type="text" id="login-code" placeholder="Code d&rsquo;acc&egrave;s">
+    <button onclick="sInscrire()">S&rsquo;inscrire et entrer</button>
+    <span class="lien" onclick="basculerMode()">D&eacute;j&agrave; inscrit ? Se connecter</span>
+    <div class="lien-admin"><button onclick="ouvrirAdmin()">&#9881;&#65039; Espace Formateur</button></div>
+    <div class="erreur" id="erreur-auth"></div>
+    <div class="succes" id="succes-auth"></div>
+  </div>
+  <div class="auth-box cache" id="box-login">
+    <div class="auth-logo"><div class="logo-icon">O</div></div>
+    <h1>Or&eacute; Academy</h1>
+    <p class="sous-titre">Connexion</p>
+    <input type="email" id="co-email" placeholder="Email">
+    <input type="password" id="co-mdp" placeholder="Mot de passe">
+    <button onclick="seConnecter()">Se connecter</button>
+    <span class="lien" onclick="motDePasseOublie()">Mot de passe oubli&eacute; ?</span>
+    <span class="lien" onclick="basculerMode()">Pas encore inscrit ? S&rsquo;inscrire</span>
+    <div class="lien-admin"><button onclick="ouvrirAdmin()">&#9881;&#65039; Espace Formateur</button></div>
+    <div class="erreur" id="erreur-login"></div>
+  </div>
+</div>
+
+<div id="page-admin">
+  <div class="admin-container">
+    <div class="admin-box" id="admin-login-box">
+      <h1>&#9881;&#65039; Espace Administrateur</h1>
+      <p>Or&eacute; Academy &mdash; R&eacute;serv&eacute; au formateur</p>
+      <input type="password" id="admin-mdp" placeholder="Mot de passe administrateur">
+      <button onclick="connexionAdmin()">Acc&eacute;der</button>
+      <button class="rouge" onclick="fermerAdmin()">Fermer</button>
+      <div class="erreur" id="erreur-admin"></div>
+    </div>
+    <div id="admin-panneau" class="cache">
+      <div class="admin-box">
+        <h2>&#128101; Apprenants inscrits</h2>
+        <button class="vert" onclick="chargerUtilisateurs()">&#128260; Rafra&icirc;chir</button>
+        <div id="liste-apprenants"><p style="color:#6b7280;">Cliquez sur Rafra&icirc;chir.</p></div>
+      </div>
+      <div class="admin-box">
+        <h2>&#128273; Demandes de mot de passe</h2>
+        <button class="vert" onclick="chargerDemandes()">&#128260; Rafra&icirc;chir</button>
+        <div id="liste-demandes"><p style="color:#6b7280;">Cliquez sur Rafra&icirc;chir.</p></div>
+      </div>
+      <div class="admin-box">
+        <h2>&#128273; Code d&rsquo;acc&egrave;s</h2>
+        <div class="code-actuel" id="code-actuel-affichage">ORE2025</div>
+        <input type="text" id="nouveau-code" placeholder="Nouveau code">
+        <button class="vert" onclick="changerCode()">Enregistrer</button>
+        <div class="succes" id="succes-code"></div>
+      </div>
+      <div class="admin-box" style="text-align:center;">
+        <button class="rouge" onclick="deconnexionAdmin()">Se d&eacute;connecter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="plateforme" class="cache">
+<header>
+  <h1>Formation : R&eacute;diger un Plan d&rsquo;Affaires</h1>
+  <p><span class="or">Or&eacute; Academy</span> &mdash; Du projet &agrave; la d&eacute;cision</p>
+  <div class="user-info">
+    <span id="nom-user">Apprenant</span>
+    <button class="btn-deconnexion" onclick="deconnexion()">D&eacute;connexion</button>
+  </div>
+</header>
+<div class="conteneur">
+  <div class="contenu" id="zone-contenu"></div>
+  <nav class="vertical">
+    <h3>Sommaire</h3>
+    <button onclick="afficherModule(0)" class="active">Accueil</button>
+    <button onclick="afficherModule(1)">01 &middot; Introduction</button>
+    <button onclick="afficherModule(2)">02 &middot; Objectifs</button>
+    <button onclick="afficherModule(3)">03 &middot; Entrepreneur</button>
+    <button onclick="afficherModule(4)">04 &middot; March&eacute;</button>
+    <button onclick="afficherModule(5)">05 &middot; Production</button>
+    <button onclick="afficherModule(6)">06 &middot; Machines</button>
+    <button onclick="afficherModule(7)">07 &middot; Personnel</button>
+    <button onclick="afficherModule(8)">08 &middot; Financement</button>
+    <button onclick="afficherModule(9)">09 &middot; Rentabilit&eacute;</button>
+    <button onclick="afficherModule(10)">10 &middot; R&eacute;sultats</button>
+    <button onclick="afficherModule(11)">11 &middot; Conclusion</button>
+    <button onclick="afficherModule(12)">&#128176; Simulateur</button>
+  </nav>
+</div>
+<footer><p>&copy; 2025 <span class="or">Or&eacute; Academy</span></p></footer>
+</div>
+<script>
+var URL_SCRIPT_GOOGLE = "https://script.google.com/macros/s/AKfycbxYwC2WQsYJ1q6zYIUcMV1qGJRyEwEpMuosS-7Q7RG2zLtj0dUzKfannsYhTeN4jmJ2/exec";
+var MOT_DE_PASSE_ADMIN_DEFAUT = "ORE-ADMIN-2025";
+var FORMATEUR_IMG = "https://api.dicebear.com/7.x/personas/svg?seed=formateur&backgroundColor=b6e3f4";
+var ELEVES_IMGS = ["https://api.dicebear.com/7.x/personas/svg?seed=e1","https://api.dicebear.com/7.x/personas/svg?seed=e2","https://api.dicebear.com/7.x/personas/svg?seed=e3","https://api.dicebear.com/7.x/personas/svg?seed=e4","https://api.dicebear.com/7.x/personas/svg?seed=e5"];
+
+function salleClasse(question, message) {
+  var h = '<div class="salle-classe"><div class="tableau-noir"><p>' + question + '</p></div>';
+  h += '<div class="formateur-zone"><div class="formateur"><img src="' + FORMATEUR_IMG + '"><span class="badge">Formateur</span></div>';
+  h += '<div class="bulle-formateur">&laquo; ' + message + ' &raquo;</div></div>';
+  h += '<div class="eleves-zone">';
+  h += '<div class="eleve"><img src="' + ELEVES_IMGS[0] + '"><span>Koffi</span></div>';
+  h += '<div class="eleve"><img src="' + ELEVES_IMGS[1] + '"><span>Ama</span></div>';
+  h += '<div class="eleve"><img src="' + ELEVES_IMGS[2] + '"><span>Yao</span></div>';
+  h += '<div class="eleve"><img src="' + ELEVES_IMGS[3] + '"><span>Afi</span></div>';
+  h += '<div class="eleve"><img src="' + ELEVES_IMGS[4] + '"><span>Kwame</span></div>';
+  h += '</div></div>';
+  return h;
+}
+
+var MODULES = {};
+
+MODULES[0] = '<div class="module"><h2>FORMATION POUR TOUS &mdash; &Eacute;crire un plan d&rsquo;affaires, &eacute;tape par &eacute;tape</h2>'
++ salleClasse("Et si on montait enfin notre entreprise ?", "Oui, mais avant : un plan d&rsquo;affaires solide !")
++ '<p>Cette formation est faite pour &ecirc;tre comprise par tout le monde. <strong>Pas besoin de dipl&ocirc;me</strong> : chaque mot est expliqu&eacute; et chaque calcul est montr&eacute; pas &agrave; pas.</p>'
++ '<h3>Pourquoi apprendre &agrave; &eacute;crire un plan ?</h3>'
++ '<div class="lexique"><strong>1. Ne pas perdre d&rsquo;argent</strong> &mdash; Le plan vous dit si le projet peut gagner de l&rsquo;argent, <strong>avant</strong> de d&eacute;penser le v&ocirc;tre.</div>'
++ '<div class="lexique"><strong>2. Convaincre</strong> &mdash; Une banque ou un partenaire fait davantage confiance &agrave; des chiffres clairs.</div>'
++ '<div class="lexique"><strong>3. Mieux diriger</strong> &mdash; Le plan est votre guide au quotidien : il montre o&ugrave; vous en &ecirc;tes.</div>'
++ '<div class="lexique"><strong>4. D&eacute;cider</strong> &mdash; Il vous aide &agrave; dire oui, non ou &laquo; pas encore &raquo;, en connaissance de cause.</div>'
++ '<div class="encadre"><strong>&Agrave; retenir</strong> &mdash; Un plan d&rsquo;affaires n&rsquo;est pas r&eacute;serv&eacute; aux dipl&ocirc;m&eacute;s : c&rsquo;est du bon sens, &eacute;crit avec des chiffres.</div>'
++ '<h3>Comment suivre cette formation</h3>'
++ '<ol><li><strong>Lire le mot &agrave; conna&icirc;tre.</strong> Chaque section commence par un petit lexique.</li>'
++ '<li><strong>Lire l&rsquo;explication et l&rsquo;exemple.</strong> L&rsquo;exemple est calcul&eacute; ligne par ligne.</li>'
++ '<li><strong>Faire l&rsquo;exercice seul.</strong> Prenez votre temps, un papier et un stylo suffisent.</li>'
++ '<li><strong>V&eacute;rifier la correction.</strong> Si vous vous &ecirc;tes tromp&eacute;, la correction explique pourquoi.</li></ol>'
++ '<div class="encadre"><strong>&Agrave; retenir</strong> &mdash; Ne passez pas &agrave; la correction avant d&rsquo;avoir essay&eacute; : c&rsquo;est en cherchant qu&rsquo;on apprend.</div></div>';
+
+MODULES[1] = '<div class="module"><h2>Section 01 &middot; Introduction au plan d&rsquo;affaires</h2>'
++ salleClasse("J&rsquo;ai une id&eacute;e, mais je ne sais pas par o&ugrave; commencer.", "Commence par ton plan d&rsquo;affaires : c&rsquo;est ta feuille de route.")
++ '<div class="encadre"><strong>Objectifs :</strong> savoir ce qu&rsquo;est un plan &bull; conna&icirc;tre ses deux grandes parties</div>'
++ '<h3>Quatre mots &agrave; retenir</h3>'
++ '<div class="lexique"><strong>Plan d&rsquo;affaires</strong> &mdash; Un document &eacute;crit qui explique votre projet et prouve qu&rsquo;il peut r&eacute;ussir.</div>'
++ '<div class="lexique"><strong>Entrepreneur</strong> &mdash; La personne qui cr&eacute;e une activit&eacute; et qui en prend la responsabilit&eacute;.</div>'
++ '<div class="lexique"><strong>Financeur</strong> &mdash; La personne ou la banque qui pr&ecirc;te ou investit de l&rsquo;argent.</div>'
++ '<div class="lexique"><strong>Rentabilit&eacute;</strong> &mdash; Le fait de gagner plus d&rsquo;argent qu&rsquo;on n&rsquo;en d&eacute;pense.</div>'
++ '<h3>&Agrave; quoi sert un plan d&rsquo;affaires ?</h3>'
++ '<div class="lexique"><strong>1. V&eacute;rifier</strong> &mdash; Avant de d&eacute;penser, on v&eacute;rifie que le projet peut marcher.</div>'
++ '<div class="lexique"><strong>2. Expliquer</strong> &mdash; Il d&eacute;crit ce que vous vendez, &agrave; qui, et comment vous le produisez.</div>'
++ '<div class="lexique"><strong>3. Convaincre</strong> &mdash; Les banques et les investisseurs le lisent avant de pr&ecirc;ter.</div>'
++ '<h3>Les deux grandes parties</h3>'
++ '<div class="lexique"><strong>1. Le march&eacute;</strong> &mdash; Qui va acheter ? Combien ? &Agrave; quel prix ?</div>'
++ '<div class="lexique"><strong>2. L&rsquo;argent</strong> &mdash; Combien co&ucirc;te le projet ? Combien il rapporte ?</div>'
++ '<div class="lexique"><strong>3. Le reste</strong> &mdash; La personne, la production et l&rsquo;organisation.</div>'
++ '<h3>Les 5 &eacute;tapes d&rsquo;un plan</h3>'
++ '<ol><li>D&eacute;crire le projet</li><li>V&eacute;rifier le march&eacute;</li><li>Calculer les co&ucirc;ts</li><li>Calculer les gains</li><li>D&eacute;cider</li></ol>'
++ '<h3>Un projet de gari &agrave; Vo</h3>'
++ '<p><strong>Projet :</strong> fabriquer du gari et le vendre au march&eacute; de Vo.</p>'
++ '<ol><li><strong>Qui va acheter ?</strong> Les familles et les petits commer&ccedil;ants de Vo.</li>'
++ '<li><strong>Combien co&ucirc;te la machine ?</strong> Par exemple 3 000 000 FCFA.</li>'
++ '<li><strong>Combien je gagne par mois ?</strong> Par exemple 500 000 FCFA.</li></ol>'
++ '<div class="encadre"><strong>&Agrave; retenir</strong> &mdash; Le plan transforme une id&eacute;e floue en r&eacute;ponses pr&eacute;cises.</div>'
++ '<div class="jeu"><h3>Exercice &mdash; &Agrave; vous de jouer</h3>'
++ '<div class="question"><div class="enonce">1. Pourquoi faut-il faire un plan d&rsquo;affaires avant de d&eacute;penser son argent ?</div>'
++ '<div class="choix"><label><input type="radio" name="q1-1" value="A"> A) Pour d&eacute;corer un dossier</label>'
++ '<label><input type="radio" name="q1-1" value="B"> B) Pour v&eacute;rifier que le projet peut r&eacute;ussir</label>'
++ '<label><input type="radio" name="q1-1" value="C"> C) Pour remplacer la comptabilit&eacute;</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q1-1\', \'B\', \'Un plan permet de voir les gains et les depenses sur le papier.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q1-1"></div></div>'
++ '<div class="question"><div class="enonce">2. Citez les deux grandes parties d&rsquo;un plan d&rsquo;affaires.</div>'
++ '<div class="choix"><label><input type="radio" name="q1-2" value="A"> A) Le march&eacute; et l&rsquo;argent</label>'
++ '<label><input type="radio" name="q1-2" value="B"> B) Le marketing et la comptabilit&eacute;</label>'
++ '<label><input type="radio" name="q1-2" value="C"> C) Le juridique et le fiscal</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q1-2\', \'A\', \'Le marche repond a qui achete. L argent repond a combien ca coute et combien ca rapporte.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q1-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m1" onclick="afficherCorrection(\'m1\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m1"><strong>Correction d&eacute;taill&eacute;e :</strong><br><strong>1 &rarr;</strong> Pour v&eacute;rifier que le projet peut r&eacute;ussir avant de risquer son argent.<br><strong>2 &rarr;</strong> Le march&eacute; (les clients) et l&rsquo;argent (les co&ucirc;ts et les gains).</div>'
++ '</div></div>';
+
+MODULES[2] = '<div class="module"><h2>Section 02 &middot; Fixer des objectifs et choisir sa strat&eacute;gie</h2>'
++ salleClasse("Je veux gagner beaucoup d&rsquo;argent tr&egrave;s vite.", "Pr&eacute;cise : combien, en combien de temps, et comment ?")
++ '<div class="encadre"><strong>Objectifs :</strong> &eacute;crire un objectif clair &bull; savoir r&eacute;agir face au risque</div>'
++ '<h3>Objectif, strat&eacute;gie, risque</h3>'
++ '<div class="lexique"><strong>Objectif</strong> &mdash; Ce que vous voulez atteindre. Il doit &ecirc;tre pr&eacute;cis et dat&eacute;.</div>'
++ '<div class="lexique"><strong>Crit&egrave;res SMART</strong> &mdash; Quatre questions : quoi, faisable, r&eacute;aliste, quand.</div>'
++ '<div class="lexique"><strong>Strat&eacute;gie</strong> &mdash; La mani&egrave;re de faire pour atteindre l&rsquo;objectif.</div>'
++ '<div class="lexique"><strong>Risque</strong> &mdash; La possibilit&eacute; que les choses se passent mal.</div>'
++ '<h3>Les quatre questions SMART</h3>'
++ '<div class="lexique"><strong>S : Sp&eacute;cifique</strong> &mdash; Quoi, et combien ?</div>'
++ '<div class="lexique"><strong>A : Accessible</strong> &mdash; Puis-je le faire avec mes moyens ?</div>'
++ '<div class="lexique"><strong>R : R&eacute;aliste</strong> &mdash; Le march&eacute; et ma production permettent-ils ?</div>'
++ '<div class="lexique"><strong>T : Temporel</strong> &mdash; Dans quel d&eacute;lai ?</div>'
++ '<h3>Trois fa&ccedil;ons de r&eacute;agir au risque</h3>'
++ '<div class="lexique"><strong>1. Adaptation</strong> &mdash; Changer sa fa&ccedil;on de faire. Ex : baisser un prix.</div>'
++ '<div class="lexique"><strong>2. Compl&eacute;mentarit&eacute;</strong> &mdash; Faire plusieurs activit&eacute;s qui se soutiennent.</div>'
++ '<div class="lexique"><strong>3. Retournement</strong> &mdash; Transformer un probl&egrave;me en chance.</div>'
++ '<h3>Transformer un souhait en objectif SMART</h3>'
++ '<p><strong>Souhait :</strong> &laquo; Gagner beaucoup d&rsquo;argent. &raquo;</p>'
++ '<ul><li><strong>Sp&eacute;cifique ?</strong> Non : combien ?</li>'
++ '<li><strong>Temporel ?</strong> Non : pour quand ?</li>'
++ '<li><strong>SMART :</strong> &laquo; Vendre 300 t de gari d&rsquo;ici 12 mois. &raquo;</li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">1. L&rsquo;objectif &laquo; Vendre plus bient&ocirc;t &raquo; respecte-t-il SMART ?</div>'
++ '<div class="choix"><label><input type="radio" name="q2-1" value="A"> A) Oui</label>'
++ '<label><input type="radio" name="q2-1" value="B"> B) Non, il manque S et T</label>'
++ '<label><input type="radio" name="q2-1" value="C"> C) Non, il manque A</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q2-1\', \'B\', \'Plus ne donne aucun chiffre, bientot ne donne aucune date.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q2-1"></div></div>'
++ '<div class="question"><div class="enonce">2. Un entrepreneur baisse son prix quand un concurrent baisse le sien. Quelle strat&eacute;gie ?</div>'
++ '<div class="choix"><label><input type="radio" name="q2-2" value="A"> A) Compl&eacute;mentarit&eacute;</label>'
++ '<label><input type="radio" name="q2-2" value="B"> B) Retournement</label>'
++ '<label><input type="radio" name="q2-2" value="C"> C) Adaptation</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q2-2\', \'C\', \'Il change sa facon de faire car la situation a change.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q2-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m2" onclick="afficherCorrection(\'m2\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m2"><strong>Corrections :</strong><br>1 &rarr; Non, il manque S et T.<br>2 &rarr; L&rsquo;adaptation.</div>'
++ '</div></div>';
+
+MODULES[3] = '<div class="module"><h2>Section 03 &middot; L&rsquo;entrepreneur et l&rsquo;analyse FFOM</h2>'
++ salleClasse("Mon id&eacute;e est bonne, mais je manque d&rsquo;argent.", "Tes comp&eacute;tences, ton r&eacute;seau et ta motivation comptent aussi.")
++ '<div class="encadre"><strong>Objectifs :</strong> conna&icirc;tre ses atouts et limites &bull; analyser avec FFOM</div>'
++ '<h3>Comp&eacute;tence, ressource, r&eacute;seau, FFOM</h3>'
++ '<div class="lexique"><strong>Comp&eacute;tence</strong> &mdash; Ce que vous savez bien faire.</div>'
++ '<div class="lexique"><strong>Ressource</strong> &mdash; Argent, temps, outils, personnes.</div>'
++ '<div class="lexique"><strong>R&eacute;seau</strong> &mdash; Les personnes qui peuvent vous aider.</div>'
++ '<div class="lexique"><strong>FFOM</strong> &mdash; Forces, Faiblesses, Opportunit&eacute;s, Menaces.</div>'
++ '<h3>Interne ou externe ?</h3>'
++ '<div class="lexique"><strong>Interne</strong> &mdash; Forces et faiblesses.</div>'
++ '<div class="lexique"><strong>Externe</strong> &mdash; Opportunit&eacute;s et menaces.</div>'
++ '<h3>Exemple de grille FFOM</h3>'
++ '<p><strong>Forces :</strong> je sais fabriquer un gari croustillant.<br>'
++ '<strong>Faiblesses :</strong> pas de comptabilit&eacute; tenue.<br>'
++ '<strong>Opportunit&eacute;s :</strong> de plus en plus de familles ach&egrave;tent du gari local.<br>'
++ '<strong>Menaces :</strong> une grande usine peut baisser ses prix.</p>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">a) Une machine d&eacute;j&agrave; disponible</div>'
++ '<div class="choix"><label><input type="radio" name="q3-1" value="F"> Force</label>'
++ '<label><input type="radio" name="q3-1" value="Fa"> Faiblesse</label>'
++ '<label><input type="radio" name="q3-1" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-1" value="M"> Menace</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q3-1\', \'F\', \'Elle depend de vous.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q3-1"></div></div>'
++ '<div class="question"><div class="enonce">b) Un concurrent qui baisse ses prix</div>'
++ '<div class="choix"><label><input type="radio" name="q3-2" value="F"> Force</label>'
++ '<label><input type="radio" name="q3-2" value="Fa"> Faiblesse</label>'
++ '<label><input type="radio" name="q3-2" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-2" value="M"> Menace</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q3-2\', \'M\', \'Il est exterieur a vous.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q3-2"></div></div>'
++ '<div class="question"><div class="enonce">c) Une absence de comptabilit&eacute;</div>'
++ '<div class="choix"><label><input type="radio" name="q3-3" value="F"> Force</label>'
++ '<label><input type="radio" name="q3-3" value="Fa"> Faiblesse</label>'
++ '<label><input type="radio" name="q3-3" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-3" value="M"> Menace</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q3-3\', \'Fa\', \'C est vous qui devez la corriger.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q3-3"></div></div>'
++ '<div class="question"><div class="enonce">d) Une hausse de la demande en gari</div>'
++ '<div class="choix"><label><input type="radio" name="q3-4" value="F"> Force</label>'
++ '<label><input type="radio" name="q3-4" value="Fa"> Faiblesse</label>'
++ '<label><input type="radio" name="q3-4" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-4" value="M"> Menace</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q3-4\', \'O\', \'Elle vient du marche.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q3-4"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m3" onclick="afficherCorrection(\'m3\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m3"><strong>Corrections :</strong><br>a &rarr; Force<br>b &rarr; Menace<br>c &rarr; Faiblesse<br>d &rarr; Opportunit&eacute;</div>'
++ '</div></div>';
+MODULES[4] = '<div class="module"><h2>Section 04 &middot; &Eacute;tudier le march&eacute;</h2>'
++ salleClasse("Personne ne vend &ccedil;a ici, c&rsquo;est parfait !", "Justement, v&eacute;rifions d&rsquo;abord qu&rsquo;il existe une vraie demande.")
++ '<div class="encadre"><strong>Objectifs :</strong> savoir qui ach&egrave;te &bull; calculer sa part de march&eacute;</div>'
++ '<h3>Afi et Ay&eacute;l&eacute; : deux produits, une m&ecirc;me racine</h3>'
++ '<p>Afi fait du <strong>gari</strong>. Ay&eacute;l&eacute; fait du <strong>tapioca</strong>.</p>'
++ '<ul><li><strong>Gari :</strong> 12 000 t &times; 25 % = 3 000 t</li>'
++ '<li><strong>D&eacute;j&agrave; transform&eacute; :</strong> 2 400 t &rarr; r&eacute;siduel 600 t</li>'
++ '<li><strong>Tapioca :</strong> 300 t potentielles, 60 t transform&eacute;es &rarr; niche 240 t</li></ul>'
++ '<h3>March&eacute;, concurrence, niche, part</h3>'
++ '<div class="lexique"><strong>March&eacute; total</strong> &mdash; Toute la quantit&eacute; vendable.</div>'
++ '<div class="lexique"><strong>Concurrence</strong> &mdash; Les autres entreprises.</div>'
++ '<div class="lexique"><strong>March&eacute; r&eacute;siduel</strong> &mdash; La partie non occup&eacute;e.</div>'
++ '<div class="lexique"><strong>Part de march&eacute;</strong> &mdash; La portion que vous contr&ocirc;lez.</div>'
++ '<h3>Commen&ccedil;ons petit : 100 kg de manioc</h3>'
++ '<p>100 kg de racines &rarr; Transformation &rarr; <strong>25 kg</strong> de gari. Rendement : 25 kg sur 100 kg.</p>'
++ '<h3>De 100 kg &agrave; 12 000 tonnes</h3>'
++ '<ul><li><strong>1 tonne</strong> = 1 000 kg</li>'
++ '<li><strong>12 000 t</strong> de racines par an</li>'
++ '<li><strong>3 000 t</strong> de gari : 12 000 &times; 25 &divide; 100</li></ul>'
++ '<h3>Les concurrents</h3>'
++ '<ul><li><strong>8 artisans</strong> : 8 &times; 200 = 1 600 t</li>'
++ '<li><strong>1 grande unit&eacute;</strong> : 800 t</li>'
++ '<li><strong>Total : 2 400 t</strong></li></ul>'
++ '<h3>Le march&eacute; r&eacute;siduel</h3>'
++ '<p>3 000 &minus; 2 400 = <strong>600 t</strong> &agrave; conqu&eacute;rir.</p>'
++ '<h3>Votre part de march&eacute;</h3>'
++ '<p>10 bols sur 100 = 10 &divide; 100 &times; 100 = <strong>10 %</strong>.</p>'
++ '<h3>Les 4 calculs du march&eacute;</h3>'
++ '<ol><li>March&eacute; total = quantit&eacute; &times; rendement</li>'
++ '<li>March&eacute; r&eacute;siduel = total &minus; d&eacute;j&agrave; transform&eacute;</li>'
++ '<li>Objectif r&eacute;aliste = % du march&eacute;</li>'
++ '<li>Part de march&eacute; = vendu &divide; total &times; 100</li></ol>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">1. 12 000 t x 25 % = ? (tonnes)</div>'
++ '<input type="number" id="in-q4-1" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q4-1\', 3000, \'3 000 tonnes.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q4-1"></div></div>'
++ '<div class="question"><div class="enonce">2. 3 000 &minus; 2 400 = ? (tonnes)</div>'
++ '<input type="number" id="in-q4-2" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q4-2\', 600, \'600 tonnes.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q4-2"></div></div>'
++ '<div class="question"><div class="enonce">3. 300 &divide; 3 000 &times; 100 = ? (%)</div>'
++ '<input type="number" id="in-q4-3" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q4-3\', 10, \'10 %.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q4-3"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m4" onclick="afficherCorrection(\'m4\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m4"><strong>Corrections :</strong><br>1 &rarr; 3 000 t<br>2 &rarr; 600 t<br>3 &rarr; 10 %</div>'
++ '</div></div>';
+
+MODULES[5] = '<div class="module"><h2>Section 05 &middot; Cha&icirc;ne de production</h2>'
++ salleClasse("Combien de machines dois-je acheter ?", "Calcule la capacit&eacute; de chaque &eacute;tape.")
++ '<div class="encadre"><strong>Objectifs :</strong> comprendre les &eacute;tapes &bull; trouver le goulot</div>'
++ '<h3>&Eacute;tape, capacit&eacute;, goulot</h3>'
++ '<div class="lexique"><strong>Cha&icirc;ne</strong> &mdash; Toutes les &eacute;tapes travers&eacute;es.</div>'
++ '<div class="lexique"><strong>Capacit&eacute;</strong> &mdash; Ce qu&rsquo;une machine peut traiter (T/H).</div>'
++ '<div class="lexique"><strong>Goulot</strong> &mdash; L&rsquo;&eacute;tape la plus lente.</div>'
++ '<div class="lexique"><strong>Capacit&eacute; journali&egrave;re</strong> &mdash; Goulot &times; heures.</div>'
++ '<h3>Une cha&icirc;ne de 8 heures</h3>'
++ '<ul><li>R&acirc;peuse : 0,5 T/H</li><li>Tamiseur : 0,7 T/H</li><li>2 presses : 0,4 T/H</li>'
++ '<li><strong>Goulot :</strong> les presses</li>'
++ '<li><strong>Production :</strong> 0,4 &times; 8 = 3,2 t/jour</li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">Capacit&eacute; journali&egrave;re (tonnes) ?</div>'
++ '<input type="number" id="in-q5-2" placeholder="Votre reponse" step="0.1"><br>'
++ '<button class="action" onclick="verifierNum(\'q5-2\', 3.2, \'0,4 x 8 = 3,2.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q5-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m5" onclick="afficherCorrection(\'m5\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m5"><strong>Correction :</strong> 3,2 t/jour</div>'
++ '</div></div>';
+
+MODULES[6] = '<div class="module"><h2>Section 06 &middot; Choisir les machines</h2>'
++ salleClasse("Quelle machine dois-je acheter ?", "Choisis selon la quantit&eacute; et le budget.")
++ '<div class="encadre"><strong>Objectifs :</strong> choisir une machine par &eacute;tape &bull; calculer le co&ucirc;t</div>'
++ '<h3>Trois niveaux de machines</h3>'
++ '<div class="lexique"><strong>Manuel</strong> &mdash; Peu cher, lent.</div>'
++ '<div class="lexique"><strong>Semi-industriel</strong> &mdash; Bon compromis.</div>'
++ '<div class="lexique"><strong>Industriel</strong> &mdash; Tr&egrave;s cher, gros volumes.</div>'
++ '<h3>La liste pour Afi</h3>'
++ '<ul><li>R&acirc;peuse : 1 200 000 FCFA</li>'
++ '<li>Presses : 2 &times; 7 000 000 = 14 000 000 FCFA</li>'
++ '<li>Tamiseur : 1 600 000 FCFA</li>'
++ '<li>Torr&eacute;facteur : 900 000 FCFA</li>'
++ '<li><strong>Total : 17 700 000 FCFA</strong></li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">Co&ucirc;t total des &eacute;quipements ? (FCFA)</div>'
++ '<input type="number" id="in-q6-2" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q6-2\', 17700000, \'17 700 000 FCFA.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q6-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m6" onclick="afficherCorrection(\'m6\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m6"><strong>Correction :</strong> 17 700 000 FCFA</div>'
++ '</div></div>';
+
+MODULES[7] = '<div class="module"><h2>Section 07 &middot; Organisation et personnel</h2>'
++ salleClasse("Qui va travailler avec moi ?", "Calcule les ouvriers et op&eacute;rateurs.")
++ '<div class="encadre"><strong>Objectifs :</strong> calculer le co&ucirc;t des ouvriers &bull; organiser</div>'
++ '<h3>Personnel et salaires</h3>'
++ '<div class="lexique"><strong>Ouvrier</strong> &mdash; 3 000 FCFA/jour.</div>'
++ '<div class="lexique"><strong>Op&eacute;rateur</strong> &mdash; 10 000 FCFA/jour. 2 machines max.</div>'
++ '<h3>Le calcul pour 3 ouvriers et 2 op&eacute;rateurs</h3>'
++ '<ul><li>Ouvriers : 3 &times; 3 000 = 9 000</li><li>Op&eacute;rateurs : 2 &times; 10 000 = 20 000</li>'
++ '<li>Total/jour : 29 000</li><li>Total/mois : 29 000 &times; 26 = 754 000 FCFA</li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">Co&ucirc;t mensuel (FCFA) ?</div>'
++ '<input type="number" id="in-q7-1" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q7-1\', 754000, \'754 000 FCFA.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q7-1"></div></div>'
++ '<div class="question"><div class="enonce">Combien d&rsquo;op&eacute;rateurs pour 5 machines ?</div>'
++ '<input type="number" id="in-q7-2" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q7-2\', 3, \'5 / 2 = 2,5 : arrondi a 3.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q7-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m7" onclick="afficherCorrection(\'m7\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m7"><strong>Corrections :</strong><br>1 &rarr; 754 000 FCFA<br>2 &rarr; 3 op&eacute;rateurs</div>'
++ '</div></div>';
+MODULES[8] = '<div class="module"><h2>Section 08 &middot; Co&ucirc;ts et financement du projet</h2>'
++ salleClasse("Combien il me faut pour d&eacute;marrer ?", "Investissement + fonds de roulement = co&ucirc;t du projet.")
++ '<div class="encadre"><strong>Objectifs :</strong> chiffrer le co&ucirc;t total &bull; trouver l&rsquo;argent</div>'
++ '<h3>Investissement, financement</h3>'
++ '<div class="lexique"><strong>Investissement</strong> &mdash; Machines et outils. Une fois.</div>'
++ '<div class="lexique"><strong>Fonds de roulement</strong> &mdash; Pour d&eacute;marrer.</div>'
++ '<div class="lexique"><strong>Apport personnel</strong> &mdash; Votre argent.</div>'
++ '<div class="lexique"><strong>Cr&eacute;dit</strong> &mdash; Argent emprunt&eacute;.</div>'
++ '<h3>Un projet &agrave; 25 millions</h3>'
++ '<ul><li>Investissement : 20 000 000</li><li>Fonds de roulement : 5 000 000</li>'
++ '<li>Co&ucirc;t : 25 000 000 FCFA</li><li>Apport 40 % : 10 000 000</li>'
++ '<li>Reste : 15 000 000 FCFA</li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">1. Co&ucirc;t du projet (20M + 5M) ? (FCFA)</div>'
++ '<input type="number" id="in-q8-1" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q8-1\', 25000000, \'25 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q8-1"></div></div>'
++ '<div class="question"><div class="enonce">2. Reste &agrave; financer (60 %) ? (FCFA)</div>'
++ '<input type="number" id="in-q8-2" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q8-2\', 15000000, \'15 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q8-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m8" onclick="afficherCorrection(\'m8\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m8"><strong>Corrections :</strong><br>1 &rarr; 25 000 000 FCFA<br>2 &rarr; 15 000 000 FCFA</div>'
++ '</div></div>';
+
+MODULES[9] = '<div class="module"><h2>Section 09 &middot; Seuil de rentabilit&eacute;</h2>'
++ salleClasse("Combien dois-je vendre pour ne pas perdre ?", "C&rsquo;est ton seuil de rentabilit&eacute;.")
++ '<div class="encadre"><strong>Objectifs :</strong> charges fixes vs variables &bull; calculer le seuil</div>'
++ '<h3>CA, CF, CV, seuil</h3>'
++ '<div class="lexique"><strong>CA</strong> &mdash; Quantit&eacute; &times; prix.</div>'
++ '<div class="lexique"><strong>Charges fixes</strong> &mdash; Loyer, salaires fixes.</div>'
++ '<div class="lexique"><strong>Charges variables</strong> &mdash; Augmentent avec la production.</div>'
++ '<div class="lexique"><strong>Seuil</strong> &mdash; Niveau o&ugrave; on ne perd plus.</div>'
++ '<h3>Calcul du seuil</h3>'
++ '<ol><li>Marge = prix &minus; CV</li><li>Seuil quantit&eacute; = CF &divide; marge</li>'
++ '<li>Seuil argent = seuil &times; prix</li></ol>'
++ '<h3>Exemple gari</h3>'
++ '<ul><li>CF : 1 000 000/mois</li><li>Prix : 1 500/kg</li><li>CV : 1 000/kg</li>'
++ '<li>Marge : 500/kg</li><li>Seuil : 2 000 kg</li><li>Seuil argent : 3 000 000 FCFA</li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">1. Seuil en kilos ?</div>'
++ '<input type="number" id="in-q9-1" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q9-1\', 2000, \'2 000 kg.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q9-1"></div></div>'
++ '<div class="question"><div class="enonce">2. Seuil en argent (FCFA) ?</div>'
++ '<input type="number" id="in-q9-2" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q9-2\', 3000000, \'3 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q9-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m9" onclick="afficherCorrection(\'m9\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m9"><strong>Corrections :</strong><br>1 &rarr; 2 000 kg<br>2 &rarr; 3 000 000 FCFA</div>'
++ '</div></div>';
+
+MODULES[10] = '<div class="module"><h2>Section 10 &middot; R&eacute;sultats et remboursement</h2>'
++ salleClasse("Mon projet gagne : je peux rembourser ?", "Regarde le r&eacute;sultat net.")
++ '<div class="encadre"><strong>Objectifs :</strong> calculer le r&eacute;sultat &bull; v&eacute;rifier le remboursement</div>'
++ '<h3>R&eacute;sultat, int&eacute;r&ecirc;t, remboursement</h3>'
++ '<div class="lexique"><strong>R&eacute;sultat brut</strong> &mdash; CA &minus; d&eacute;penses &minus; amortissements.</div>'
++ '<div class="lexique"><strong>Int&eacute;r&ecirc;t</strong> &mdash; Prix pay&eacute; &agrave; la banque.</div>'
++ '<div class="lexique"><strong>R&eacute;sultat avant imp&ocirc;t</strong> &mdash; Brut &minus; int&eacute;r&ecirc;ts.</div>'
++ '<h3>Exemple</h3>'
++ '<ul><li>CA : 4 000 000</li><li>D&eacute;penses : 2 500 000</li><li>Amortissements : 300 000</li>'
++ '<li>Int&eacute;r&ecirc;ts : 200 000</li>'
++ '<li>R&eacute;sultat brut : 1 200 000 FCFA</li>'
++ '<li>R&eacute;sultat avant imp&ocirc;t : 1 000 000 FCFA</li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">1. R&eacute;sultat brut ? (FCFA)</div>'
++ '<input type="number" id="in-q10-1" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q10-1\', 1200000, \'1 200 000 FCFA.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q10-1"></div></div>'
++ '<div class="question"><div class="enonce">2. R&eacute;sultat avant imp&ocirc;t ? (FCFA)</div>'
++ '<input type="number" id="in-q10-2" placeholder="Votre reponse"><br>'
++ '<button class="action" onclick="verifierNum(\'q10-2\', 1000000, \'1 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q10-2"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m10" onclick="afficherCorrection(\'m10\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m10"><strong>Corrections :</strong><br>1 &rarr; 1 200 000 FCFA<br>2 &rarr; 1 000 000 FCFA</div>'
++ '</div></div>';
+
+MODULES[11] = '<div class="module"><h2>Section 11 &middot; Conclure et d&eacute;cider</h2>'
++ salleClasse("Mon plan est termin&eacute;, on lance ?", "Relis tes indicateurs d&rsquo;abord.")
++ '<div class="encadre"><strong>Objectifs :</strong> r&eacute;sumer &bull; prendre une d&eacute;cision</div>'
++ '<h3>Synth&egrave;se, vigilance, d&eacute;cision</h3>'
++ '<div class="lexique"><strong>Synth&egrave;se</strong> &mdash; R&eacute;sum&eacute; des chiffres importants.</div>'
++ '<div class="lexique"><strong>Point de vigilance</strong> &mdash; &Eacute;l&eacute;ment fragile.</div>'
++ '<div class="lexique"><strong>Recommandation</strong> &mdash; Lancer, ajuster ou abandonner.</div>'
++ '<h3>Prendre la d&eacute;cision</h3>'
++ '<ul><li><strong>Positif ?</strong> Pr&eacute;parez le financement.</li>'
++ '<li><strong>N&eacute;gatif ?</strong> Revoyez prix, co&ucirc;ts ou volume.</li>'
++ '<li><strong>Doutes ?</strong> Testez &agrave; petite &eacute;chelle.</li></ul>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">R&eacute;sultat &minus;400 000 FCFA/mois. D&eacute;cision ?</div>'
++ '<div class="choix"><label><input type="radio" name="q11-1" value="A"> A) Lancer</label>'
++ '<label><input type="radio" name="q11-1" value="B"> B) Emprunter plus</label>'
++ '<label><input type="radio" name="q11-1" value="C"> C) Revoir prix, co&ucirc;ts ou volume</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q11-1\', \'C\', \'Corriger avant de depenser davantage.\')">V&eacute;rifier</button>'
++ '<div class="feedback" id="fb-q11-1"></div></div>'
++ '<button class="btn-correction" id="btn-corr-m11" onclick="afficherCorrection(\'m11\')">&#128214; Voir la correction</button>'
++ '<div class="correction" id="correction-m11"><strong>Correction :</strong> C &mdash; Revoir prix, co&ucirc;ts ou volume.</div>'
++ '</div></div>';
+
+MODULES[12] = '<div class="module"><h2>&#128176; Simulateur de Plan d&rsquo;Affaires</h2>'
++ '<p>Gr&acirc;ce au simulateur Google Sheets, vous pouvez construire votre plan d&rsquo;affaires complet avec calculs automatiques.</p>'
++ '<div class="telecharger-bloc">'
++ '<h3>Votre simulateur personnel Google Sheets</h3>'
++ '<p>Un fichier Google Sheets a &eacute;t&eacute; cr&eacute;&eacute; sp&eacute;cialement pour vous lors de votre inscription.</p>'
++ '<p style="margin-top:15px;"><strong>Comment y acc&eacute;der :</strong></p>'
++ '<ol style="text-align:left;display:inline-block;margin-top:10px;">'
++ '<li>V&eacute;rifiez votre bo&icirc;te email</li>'
++ '<li>Cherchez le message de partage Google Drive</li>'
++ '<li>Ouvrez le fichier et commencez &agrave; remplir</li>'
++ '<li><strong>Rappel : votre acc&egrave;s est valable 3 mois</strong></li></ol>'
++ '<br><a href="https://drive.google.com/drive/folders/19ZC1rm-Xc4yKVJ_dbf9O9mVRzV0K_Xng" target="_blank" class="btn-simulateur">&#128202; Ouvrir mon simulateur Google Sheets</a>'
++ '</div>'
++ '<div class="encadre"><strong>Besoin d&rsquo;aide ?</strong> Contactez votre formateur.</div>'
++ '</div>';
+
+// ==================== FONCTION AFFICHER CORRECTION ====================
+function afficherCorrection(id) {
+  var c = document.getElementById('correction-' + id);
+  if (!c) return;
+  c.classList.toggle('visible');
+  var btn = document.getElementById('btn-corr-' + id);
+  if (btn) {
+    if (c.classList.contains('visible')) btn.textContent = '🙈 Masquer la correction';
+    else btn.textContent = '📖 Voir la correction';
+  }
+}
+// ==================== AFFICHAGE ====================
+function afficherModule(numero) {
+  var zone = document.getElementById('zone-contenu');
+  if (!zone) return;
+  zone.innerHTML = MODULES[numero] || '<p>Module introuvable.</p>';
+  var b = document.querySelectorAll('nav.vertical button');
+  for (var i = 0; i < b.length; i++) b[i].classList.remove('active');
+  if (b[numero]) b[numero].classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ==================== QUIZ ====================
+function verifierQCM(id, bonne, expl) {
+  var radios = document.querySelectorAll('input[name="' + id + '"]');
+  var choix = null;
+  for (var i = 0; i < radios.length; i++) if (radios[i].checked) choix = radios[i].value;
+  var fb = document.getElementById('fb-' + id);
+  if (!fb) return;
+  if (!choix) { fb.className = 'feedback mauvais'; fb.textContent = 'Selectionnez une reponse.'; return; }
+  if (choix === bonne) { fb.className = 'feedback bon'; fb.innerHTML = 'Bonne reponse ! ' + expl; }
+  else { fb.className = 'feedback mauvais'; fb.innerHTML = 'Mauvaise reponse. Bonne : <strong>' + bonne + '</strong>.<br>' + expl; }
+}
+function verifierNum(id, bonne, expl) {
+  var input = document.getElementById('in-' + id);
+  var fb = document.getElementById('fb-' + id);
+  if (!input || !fb) return;
+  var val = parseFloat(input.value);
+  if (isNaN(val)) { fb.className = 'feedback mauvais'; fb.textContent = 'Entrez un nombre.'; return; }
+  if (Math.abs(val - bonne) < 0.01) { fb.className = 'feedback bon'; fb.innerHTML = 'Bravo ! ' + bonne + '.<br>' + expl; }
+  else { fb.className = 'feedback mauvais'; fb.innerHTML = 'Bonne reponse : <strong>' + bonne + '</strong>.<br>' + expl; }
+}
+
+// ==================== ADMIN ====================
+function ouvrirAdmin() {
+  document.getElementById('page-admin').style.display = 'block';
+  document.getElementById('admin-panneau').classList.add('cache');
+  document.getElementById('admin-login-box').classList.remove('cache');
+}
+function fermerAdmin() {
+  document.getElementById('page-admin').style.display = 'none';
+  window.location.hash = '';
+}
+function connexionAdmin() {
+  var m = document.getElementById('admin-mdp').value;
+  var ma = localStorage.getItem('admin_mdp') || MOT_DE_PASSE_ADMIN_DEFAUT;
+  var e = document.getElementById('erreur-admin');
+  if (m === ma) {
+    document.getElementById('admin-login-box').classList.add('cache');
+    document.getElementById('admin-panneau').classList.remove('cache');
+    e.style.display = 'none';
+    rafraichirAdmin();
+  } else { e.style.display = 'block'; e.textContent = 'Mot de passe incorrect'; }
+}
+function deconnexionAdmin() { document.getElementById('admin-mdp').value = ''; fermerAdmin(); }
+function rafraichirAdmin() {
+  var code = localStorage.getItem('code_acces') || 'ORE2025';
+  document.getElementById('code-actuel-affichage').textContent = code;
+}
+function changerCode() {
+  var n = document.getElementById('nouveau-code').value.trim();
+  var s = document.getElementById('succes-code');
+  if (n.length < 4) { s.style.display = 'block'; s.style.color = '#dc3545'; s.textContent = 'Minimum 4 caracteres'; return; }
+  localStorage.setItem('code_acces', n);
+  s.style.display = 'block'; s.style.color = '#059669'; s.textContent = 'Code modifie : ' + n;
+  document.getElementById('code-actuel-affichage').textContent = n;
+  document.getElementById('nouveau-code').value = '';
+  setTimeout(function() { s.style.display = 'none'; }, 3000);
+}
+
+// ==================== ADMIN - GOOGLE ====================
+function chargerUtilisateurs() {
+  var zone = document.getElementById('liste-apprenants');
+  zone.innerHTML = '<p style="color:#1a237e;">Chargement...</p>';
+  fetch(URL_SCRIPT_GOOGLE + '?action=listeUtilisateurs')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.succes || !data.utilisateurs || data.utilisateurs.length === 0) {
+        zone.innerHTML = '<p style="color:#999;font-size:13px;">Aucun apprenant.</p>';
+        return;
+      }
+      var h = '<table class="tableau-admin"><tr><th>Nom</th><th>Email</th><th>Date</th></tr>';
+      for (var i = 0; i < data.utilisateurs.length; i++) {
+        var u = data.utilisateurs[i];
+        h += '<tr><td>' + u.nom + '</td><td>' + u.email + '</td><td>' + u.date + '</td></tr>';
+      }
+      h += '</table>';
+      zone.innerHTML = h;
+    })
+    .catch(function() {
+      zone.innerHTML = '<p style="color:#dc2626;font-size:13px;">Erreur de connexion.</p>';
+    });
+}
+function chargerDemandes() {
+  var zone = document.getElementById('liste-demandes');
+  zone.innerHTML = '<p style="color:#1a237e;">Chargement...</p>';
+  fetch(URL_SCRIPT_GOOGLE + '?action=listeDemandes')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.succes || !data.demandes || data.demandes.length === 0) {
+        zone.innerHTML = '<p style="color:#999;font-size:13px;">Aucune demande en attente.</p>';
+        return;
+      }
+      var h = '';
+      for (var i = 0; i < data.demandes.length; i++) {
+        var d = data.demandes[i];
+        h += '<div class="demande-item"><strong>Email :</strong> ' + d.email + '<br><strong>Date :</strong> ' + d.date + '<br><br>';
+        h += '<button class="vert" onclick="reinitialiser(\'' + d.email + '\', this)">&#128273; Reinitialiser le mot de passe</button></div>';
+      }
+      zone.innerHTML = h;
+    })
+    .catch(function() {
+      zone.innerHTML = '<p style="color:#dc2626;font-size:13px;">Erreur de connexion.</p>';
+    });
+}
+function reinitialiser(email, bouton) {
+  if (!confirm('Generer un nouveau mot de passe pour ' + email + ' ?')) return;
+  bouton.disabled = true;
+  bouton.textContent = 'En cours...';
+  fetch(URL_SCRIPT_GOOGLE + '?action=resetMdp&email=' + encodeURIComponent(email))
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.succes) {
+        alert('Nouveau mot de passe genere et envoye par email !\n\n' + data.nouveauMdp);
+        chargerDemandes();
+        chargerUtilisateurs();
+      } else {
+        alert('Erreur : ' + (data.message || 'inconnue'));
+        bouton.disabled = false;
+        bouton.textContent = 'Reinitialiser le mot de passe';
+      }
+    })
+    .catch(function() {
+      alert('Erreur de connexion au serveur.');
+      bouton.disabled = false;
+      bouton.textContent = 'Reinitialiser le mot de passe';
+    });
+}
+
+// ==================== AUTH ====================
+function basculerMode() {
+  document.getElementById('box-connexion').classList.toggle('cache');
+  document.getElementById('box-login').classList.toggle('cache');
+}
+function sInscrire() {
+  var n = document.getElementById('login-nom').value.trim();
+  var e = document.getElementById('login-email').value.trim();
+  var m = document.getElementById('login-mdp').value;
+  var c = document.getElementById('login-code').value.trim();
+  var er = document.getElementById('erreur-auth');
+  var sc = document.getElementById('succes-auth');
+  if (!n || !e || !m || !c) { er.style.display = 'block'; er.textContent = 'Tous les champs sont obligatoires'; return; }
+  if (m.length < 4) { er.style.display = 'block'; er.textContent = 'Mot de passe : min 4 caracteres'; return; }
+  var ca = localStorage.getItem('code_acces') || 'ORE2025';
+  if (c !== ca) { er.style.display = 'block'; er.textContent = 'Code incorrect.'; return; }
+  er.style.display = 'none';
+  sc.style.display = 'block'; sc.textContent = 'Inscription en cours... Creation du simulateur...';
+  fetch(URL_SCRIPT_GOOGLE, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'inscription', nom: n, email: e, mdp: m })
+  })
+  .then(function() {
+    localStorage.setItem('utilisateur_actuel', JSON.stringify({nom:n, email:e}));
+    setTimeout(function() { entrerPlateforme(n); }, 1500);
+  })
+  .catch(function() {
+    er.style.display = 'block'; er.textContent = 'Erreur de connexion au serveur.';
+  });
+}
+function seConnecter() {
+  var e = document.getElementById('co-email').value.trim();
+  var m = document.getElementById('co-mdp').value;
+  var er = document.getElementById('erreur-login');
+  if (!e || !m) { er.style.display = 'block'; er.textContent = 'Email et mot de passe obligatoires'; return; }
+  er.style.display = 'none';
+  fetch(URL_SCRIPT_GOOGLE, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'verifierUtilisateur', email: e, mdp: m })
+  })
+  .then(function() {
+    localStorage.setItem('utilisateur_actuel', JSON.stringify({nom:e.split('@')[0], email:e}));
+    setTimeout(function() { entrerPlateforme(e.split('@')[0]); }, 800);
+  })
+  .catch(function() {
+    er.style.display = 'block'; er.textContent = 'Erreur de connexion.';
+  });
+}
+function motDePasseOublie() {
+  var email = prompt('Entrez votre email pour demander un nouveau mot de passe :');
+  if (!email) return;
+  fetch(URL_SCRIPT_GOOGLE, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'demandeMdp', email: email })
+  })
+  .then(function() {
+    alert('Votre demande a ete envoyee au formateur.\n\nVous recevrez un nouveau mot de passe par email.');
+  })
+  .catch(function() {
+    alert('Erreur de connexion. Reessayez.');
+  });
+}
+function entrerPlateforme(nom) {
+  document.getElementById('page-auth').classList.add('cache');
+  document.getElementById('plateforme').classList.remove('cache');
+  document.getElementById('nom-user').textContent = nom;
+  afficherModule(0);
+}
+function deconnexion() {
+  if (!confirm('Se deconnecter ?')) return;
+  localStorage.removeItem('utilisateur_actuel');
+  document.getElementById('plateforme').classList.add('cache');
+  document.getElementById('page-auth').classList.remove('cache');
+  document.getElementById('box-connexion').classList.remove('cache');
+  document.getElementById('box-login').classList.add('cache');
+}
+
+// ==================== INIT ====================
+window.addEventListener('load', function() {
+  if (window.location.hash === '#admin') ouvrirAdmin();
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && e.key === 'A') { e.preventDefault(); ouvrirAdmin(); }
+  });
+  var u = localStorage.getItem('utilisateur_actuel');
+  if (u && window.location.hash !== '#admin') {
+    try {
+      var uu = JSON.parse(u);
+      document.getElementById('page-auth').classList.add('cache');
+      document.getElementById('plateforme').classList.remove('cache');
+      document.getElementById('nom-user').textContent = uu.nom;
+      afficherModule(0);
+    } catch(e) {}
+  }
+});
+</script>
+</body>
+</html>
