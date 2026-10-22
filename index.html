@@ -187,7 +187,8 @@ footer .or{color:#f9a825;font-weight:700}
     <button onclick="afficherModule(9)">09 &middot; Rentabilit&eacute;</button>
     <button onclick="afficherModule(10)">10 &middot; R&eacute;sultats</button>
     <button onclick="afficherModule(11)">11 &middot; Conclusion</button>
-    <button onclick="afficherModule(12)">&#128176; Simulateur</button>
+    <button onclick="afficherModule(12)">&#128176; Simulateur</button> 
+    <button onclick="afficherModule(13)">&#128196; Documents</button>
   </nav>
 </div>
 <footer><p>&copy; 2025 <span class="or">Or&eacute; Academy</span></p></footer>
@@ -569,6 +570,19 @@ MODULES[11] = '<div class="module"><h2>Section 11 &middot; Conclure et d&eacute;
 + '<button class="btn-correction" id="btn-corr-m11" onclick="afficherCorrection(\'m11\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m11"><strong>Correction :</strong> C &mdash; Revoir prix, co&ucirc;ts ou volume.</div>'
 + '</div></div>';
+MODULES[13] = '<div class="module"><h2>&#128196; Documents &agrave; t&eacute;l&eacute;charger</h2>'
++ '<p>Retrouvez ici les documents Word pour vous aider &agrave; r&eacute;diger votre plan d&rsquo;affaires.</p>'
++ '<div class="telecharger-bloc">'
++ '<h3>&#128202; &Eacute;tude de march&eacute;</h3>'
++ '<p>Analyse &amp; Strat&eacute;gie commerciale : part de march&eacute;, strat&eacute;gie marketing 5P, perspectives.</p>'
++ '<a href="%C3%A9tude_marche.docx" download class="btn-simulateur" style="background:linear-gradient(135deg,#059669,#047857);">&#128229; T&eacute;l&eacute;charger l&rsquo;&eacute;tude de march&eacute;</a>'
++ '</div>'
++ '<div class="telecharger-bloc">'
++ '<h3>&#128295; &Eacute;tude technique</h3>'
++ '<p>Document de faisabilit&eacute; : mobiliers, &eacute;quipements, mati&egrave;res, cycle de production, personnel.</p>'
++ '<a href="%C3%A9tude_technique.docx" download class="btn-simulateur" style="background:linear-gradient(135deg,#1a237e,#283593);">&#128229; T&eacute;l&eacute;charger l&rsquo;&eacute;tude technique</a>'
++ '</div>'
++ '</div>';
 
 MODULES[12] = '<div class="module"><h2>&#128176; Simulateur de Plan d&rsquo;Affaires</h2>'
 + '<p>Gr&acirc;ce au simulateur Google Sheets, vous pouvez construire votre plan d&rsquo;affaires complet avec calculs automatiques.</p>'
