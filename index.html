@@ -187,15 +187,15 @@ footer .or{color:#f9a825;font-weight:700}
     <button onclick="afficherModule(9)">09 &middot; Rentabilit&eacute;</button>
     <button onclick="afficherModule(10)">10 &middot; R&eacute;sultats</button>
     <button onclick="afficherModule(11)">11 &middot; Conclusion</button>
-    <button onclick="afficherModule(12)">&#128176; Simulateur</button> 
+    <button onclick="afficherModule(12)">&#128176; Simulateur</button>
     <button onclick="afficherModule(13)">&#128196; Documents</button>
   </nav>
 </div>
 <footer><p>&copy; 2025 <span class="or">Or&eacute; Academy</span></p></footer>
 </div>
 <script>
-var URL_SCRIPT_GOOGLE = var URL_SCRIPT_GOOGLE = "https://script.google.com/macros/s/AKfycbwmsebw10FIHnez9gBEtf28CwM-42r4btKQoEogNIa1F31y1pr1DMouLgIJ4Y6VBjY2/exec";
-var MOT_DE_PASSE_ADMIN_DEFAUT = "ORE 1809";
+var URL_SCRIPT_GOOGLE = "https://script.google.com/macros/s/AKfycbwmsebw10FIHnez9gBEtf28CwM-42r4btKQoEogNIa1F31y1pr1DMouLgIJ4Y6VBjY2/exec";
+var MOT_DE_PASSE_ADMIN_DEFAUT = "ORE-ADMIN-2025";
 var FORMATEUR_IMG = "https://api.dicebear.com/7.x/personas/svg?seed=formateur&backgroundColor=b6e3f4";
 var ELEVES_IMGS = ["https://api.dicebear.com/7.x/personas/svg?seed=e1","https://api.dicebear.com/7.x/personas/svg?seed=e2","https://api.dicebear.com/7.x/personas/svg?seed=e3","https://api.dicebear.com/7.x/personas/svg?seed=e4","https://api.dicebear.com/7.x/personas/svg?seed=e5"];
 
@@ -215,403 +215,360 @@ function salleClasse(question, message) {
 
 var MODULES = {};
 
-MODULES[0] = '<div class="module"><h2>FORMATION POUR TOUS &mdash; &Eacute;crire un plan d&rsquo;affaires, &eacute;tape par &eacute;tape</h2>'
+MODULES[0] = '<div class="module"><h2>FORMATION POUR TOUS &mdash; Ecrire un plan d&rsquo;affaires, etape par etape</h2>'
 + salleClasse("Et si on montait enfin notre entreprise ?", "Oui, mais avant : un plan d&rsquo;affaires solide !")
-+ '<p>Cette formation est faite pour &ecirc;tre comprise par tout le monde. <strong>Pas besoin de dipl&ocirc;me</strong> : chaque mot est expliqu&eacute; et chaque calcul est montr&eacute; pas &agrave; pas.</p>'
-+ '<h3>Pourquoi apprendre &agrave; &eacute;crire un plan ?</h3>'
-+ '<div class="lexique"><strong>1. Ne pas perdre d&rsquo;argent</strong> &mdash; Le plan vous dit si le projet peut gagner de l&rsquo;argent, <strong>avant</strong> de d&eacute;penser le v&ocirc;tre.</div>'
-+ '<div class="lexique"><strong>2. Convaincre</strong> &mdash; Une banque ou un partenaire fait davantage confiance &agrave; des chiffres clairs.</div>'
-+ '<div class="lexique"><strong>3. Mieux diriger</strong> &mdash; Le plan est votre guide au quotidien : il montre o&ugrave; vous en &ecirc;tes.</div>'
-+ '<div class="lexique"><strong>4. D&eacute;cider</strong> &mdash; Il vous aide &agrave; dire oui, non ou &laquo; pas encore &raquo;, en connaissance de cause.</div>'
-+ '<div class="encadre"><strong>&Agrave; retenir</strong> &mdash; Un plan d&rsquo;affaires n&rsquo;est pas r&eacute;serv&eacute; aux dipl&ocirc;m&eacute;s : c&rsquo;est du bon sens, &eacute;crit avec des chiffres.</div>'
++ '<p>Cette formation est faite pour etre comprise par tout le monde. <strong>Pas besoin de diplome</strong> : chaque mot est explique et chaque calcul est montre pas a pas.</p>'
++ '<h3>Pourquoi apprendre a ecrire un plan ?</h3>'
++ '<div class="lexique"><strong>1. Ne pas perdre d&rsquo;argent</strong> &mdash; Le plan vous dit si le projet peut gagner de l&rsquo;argent, avant de depenser le votre.</div>'
++ '<div class="lexique"><strong>2. Convaincre</strong> &mdash; Une banque ou un partenaire fait davantage confiance a des chiffres clairs.</div>'
++ '<div class="lexique"><strong>3. Mieux diriger</strong> &mdash; Le plan est votre guide au quotidien.</div>'
++ '<div class="lexique"><strong>4. Decider</strong> &mdash; Il vous aide a dire oui, non ou pas encore.</div>'
++ '<div class="encadre"><strong>A retenir</strong> &mdash; Un plan d&rsquo;affaires n&rsquo;est pas reserve aux diplomes : c&rsquo;est du bon sens, ecrit avec des chiffres.</div>'
 + '<h3>Comment suivre cette formation</h3>'
-+ '<ol><li><strong>Lire le mot &agrave; conna&icirc;tre.</strong> Chaque section commence par un petit lexique.</li>'
-+ '<li><strong>Lire l&rsquo;explication et l&rsquo;exemple.</strong> L&rsquo;exemple est calcul&eacute; ligne par ligne.</li>'
-+ '<li><strong>Faire l&rsquo;exercice seul.</strong> Prenez votre temps, un papier et un stylo suffisent.</li>'
-+ '<li><strong>V&eacute;rifier la correction.</strong> Si vous vous &ecirc;tes tromp&eacute;, la correction explique pourquoi.</li></ol>'
-+ '<div class="encadre"><strong>&Agrave; retenir</strong> &mdash; Ne passez pas &agrave; la correction avant d&rsquo;avoir essay&eacute; : c&rsquo;est en cherchant qu&rsquo;on apprend.</div></div>';
++ '<ol><li>Lire le mot a connaitre (chaque section commence par un lexique)</li>'
++ '<li>Lire l&rsquo;explication et l&rsquo;exemple</li>'
++ '<li>Faire l&rsquo;exercice seul</li>'
++ '<li>Verifier la correction</li></ol>'
++ '<div class="encadre"><strong>A retenir</strong> &mdash; Ne passez pas a la correction avant d&rsquo;avoir essaye.</div></div>';
 
 MODULES[1] = '<div class="module"><h2>Section 01 &middot; Introduction au plan d&rsquo;affaires</h2>'
-+ salleClasse("J&rsquo;ai une id&eacute;e, mais je ne sais pas par o&ugrave; commencer.", "Commence par ton plan d&rsquo;affaires : c&rsquo;est ta feuille de route.")
-+ '<div class="encadre"><strong>Objectifs :</strong> savoir ce qu&rsquo;est un plan &bull; conna&icirc;tre ses deux grandes parties</div>'
-+ '<h3>Quatre mots &agrave; retenir</h3>'
-+ '<div class="lexique"><strong>Plan d&rsquo;affaires</strong> &mdash; Un document &eacute;crit qui explique votre projet et prouve qu&rsquo;il peut r&eacute;ussir.</div>'
-+ '<div class="lexique"><strong>Entrepreneur</strong> &mdash; La personne qui cr&eacute;e une activit&eacute; et qui en prend la responsabilit&eacute;.</div>'
-+ '<div class="lexique"><strong>Financeur</strong> &mdash; La personne ou la banque qui pr&ecirc;te ou investit de l&rsquo;argent.</div>'
-+ '<div class="lexique"><strong>Rentabilit&eacute;</strong> &mdash; Le fait de gagner plus d&rsquo;argent qu&rsquo;on n&rsquo;en d&eacute;pense.</div>'
-+ '<h3>&Agrave; quoi sert un plan d&rsquo;affaires ?</h3>'
-+ '<div class="lexique"><strong>1. V&eacute;rifier</strong> &mdash; Avant de d&eacute;penser, on v&eacute;rifie que le projet peut marcher.</div>'
-+ '<div class="lexique"><strong>2. Expliquer</strong> &mdash; Il d&eacute;crit ce que vous vendez, &agrave; qui, et comment vous le produisez.</div>'
-+ '<div class="lexique"><strong>3. Convaincre</strong> &mdash; Les banques et les investisseurs le lisent avant de pr&ecirc;ter.</div>'
++ salleClasse("J&rsquo;ai une idee, mais je ne sais pas par ou commencer.", "Commence par ton plan d&rsquo;affaires : c&rsquo;est ta feuille de route.")
++ '<div class="encadre"><strong>Objectifs :</strong> savoir ce qu&rsquo;est un plan &bull; connaitre ses deux grandes parties</div>'
++ '<h3>Quatre mots a retenir</h3>'
++ '<div class="lexique"><strong>Plan d&rsquo;affaires</strong> &mdash; Un document ecrit qui explique votre projet et prouve qu&rsquo;il peut reussir.</div>'
++ '<div class="lexique"><strong>Entrepreneur</strong> &mdash; La personne qui cree une activite et qui en prend la responsabilite.</div>'
++ '<div class="lexique"><strong>Financeur</strong> &mdash; La personne ou la banque qui prete ou investit de l&rsquo;argent.</div>'
++ '<div class="lexique"><strong>Rentabilite</strong> &mdash; Le fait de gagner plus d&rsquo;argent qu&rsquo;on n&rsquo;en depense.</div>'
++ '<h3>A quoi sert un plan d&rsquo;affaires ?</h3>'
++ '<div class="lexique"><strong>1. Verifier</strong> &mdash; Avant de depenser, on verifie que le projet peut marcher.</div>'
++ '<div class="lexique"><strong>2. Expliquer</strong> &mdash; Il decrit ce que vous vendez, a qui, et comment.</div>'
++ '<div class="lexique"><strong>3. Convaincre</strong> &mdash; Les banques le lisent avant de preter.</div>'
 + '<h3>Les deux grandes parties</h3>'
-+ '<div class="lexique"><strong>1. Le march&eacute;</strong> &mdash; Qui va acheter ? Combien ? &Agrave; quel prix ?</div>'
-+ '<div class="lexique"><strong>2. L&rsquo;argent</strong> &mdash; Combien co&ucirc;te le projet ? Combien il rapporte ?</div>'
++ '<div class="lexique"><strong>1. Le marche</strong> &mdash; Qui va acheter ? Combien ? A quel prix ?</div>'
++ '<div class="lexique"><strong>2. L&rsquo;argent</strong> &mdash; Combien coute le projet ? Combien il rapporte ?</div>'
 + '<div class="lexique"><strong>3. Le reste</strong> &mdash; La personne, la production et l&rsquo;organisation.</div>'
-+ '<h3>Les 5 &eacute;tapes d&rsquo;un plan</h3>'
-+ '<ol><li>D&eacute;crire le projet</li><li>V&eacute;rifier le march&eacute;</li><li>Calculer les co&ucirc;ts</li><li>Calculer les gains</li><li>D&eacute;cider</li></ol>'
-+ '<h3>Un projet de gari &agrave; Vo</h3>'
-+ '<p><strong>Projet :</strong> fabriquer du gari et le vendre au march&eacute; de Vo.</p>'
-+ '<ol><li><strong>Qui va acheter ?</strong> Les familles et les petits commer&ccedil;ants de Vo.</li>'
-+ '<li><strong>Combien co&ucirc;te la machine ?</strong> Par exemple 3 000 000 FCFA.</li>'
++ '<h3>Les 5 etapes d&rsquo;un plan</h3>'
++ '<ol><li>Decrire le projet</li><li>Verifier le marche</li><li>Calculer les couts</li><li>Calculer les gains</li><li>Decider</li></ol>'
++ '<h3>Un projet de gari a Vo</h3>'
++ '<p><strong>Projet :</strong> fabriquer du gari et le vendre au marche de Vo.</p>'
++ '<ol><li><strong>Qui va acheter ?</strong> Les familles et les petits commercants de Vo.</li>'
++ '<li><strong>Combien coute la machine ?</strong> Par exemple 3 000 000 FCFA.</li>'
 + '<li><strong>Combien je gagne par mois ?</strong> Par exemple 500 000 FCFA.</li></ol>'
-+ '<div class="encadre"><strong>&Agrave; retenir</strong> &mdash; Le plan transforme une id&eacute;e floue en r&eacute;ponses pr&eacute;cises.</div>'
-+ '<div class="jeu"><h3>Exercice &mdash; &Agrave; vous de jouer</h3>'
-+ '<div class="question"><div class="enonce">1. Pourquoi faut-il faire un plan d&rsquo;affaires avant de d&eacute;penser son argent ?</div>'
-+ '<div class="choix"><label><input type="radio" name="q1-1" value="A"> A) Pour d&eacute;corer un dossier</label>'
-+ '<label><input type="radio" name="q1-1" value="B"> B) Pour v&eacute;rifier que le projet peut r&eacute;ussir</label>'
-+ '<label><input type="radio" name="q1-1" value="C"> C) Pour remplacer la comptabilit&eacute;</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q1-1\', \'B\', \'Un plan permet de voir les gains et les depenses sur le papier.\')">V&eacute;rifier</button>'
++ '<div class="jeu"><h3>Exercice</h3>'
++ '<div class="question"><div class="enonce">1. Pourquoi faut-il faire un plan d&rsquo;affaires avant de depenser son argent ?</div>'
++ '<div class="choix"><label><input type="radio" name="q1-1" value="A"> A) Pour decorer un dossier</label>'
++ '<label><input type="radio" name="q1-1" value="B"> B) Pour verifier que le projet peut reussir</label>'
++ '<label><input type="radio" name="q1-1" value="C"> C) Pour remplacer la comptabilite</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q1-1\', \'B\', \'Un plan permet de voir les gains et les depenses sur le papier.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q1-1"></div></div>'
 + '<div class="question"><div class="enonce">2. Citez les deux grandes parties d&rsquo;un plan d&rsquo;affaires.</div>'
-+ '<div class="choix"><label><input type="radio" name="q1-2" value="A"> A) Le march&eacute; et l&rsquo;argent</label>'
-+ '<label><input type="radio" name="q1-2" value="B"> B) Le marketing et la comptabilit&eacute;</label>'
++ '<div class="choix"><label><input type="radio" name="q1-2" value="A"> A) Le marche et l&rsquo;argent</label>'
++ '<label><input type="radio" name="q1-2" value="B"> B) Le marketing et la comptabilite</label>'
 + '<label><input type="radio" name="q1-2" value="C"> C) Le juridique et le fiscal</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q1-2\', \'A\', \'Le marche repond a qui achete. L argent repond a combien ca coute et combien ca rapporte.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierQCM(\'q1-2\', \'A\', \'Le marche repond a qui achete. L argent repond a combien ca coute.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q1-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m1" onclick="afficherCorrection(\'m1\')">&#128214; Voir la correction</button>'
-+ '<div class="correction" id="correction-m1"><strong>Correction d&eacute;taill&eacute;e :</strong><br><strong>1 &rarr;</strong> Pour v&eacute;rifier que le projet peut r&eacute;ussir avant de risquer son argent.<br><strong>2 &rarr;</strong> Le march&eacute; (les clients) et l&rsquo;argent (les co&ucirc;ts et les gains).</div>'
++ '<div class="correction" id="correction-m1"><strong>Corrections :</strong><br>1 &rarr; Pour verifier que le projet peut reussir.<br>2 &rarr; Le marche et l&rsquo;argent.</div>'
 + '</div></div>';
 
-MODULES[2] = '<div class="module"><h2>Section 02 &middot; Fixer des objectifs et choisir sa strat&eacute;gie</h2>'
-+ salleClasse("Je veux gagner beaucoup d&rsquo;argent tr&egrave;s vite.", "Pr&eacute;cise : combien, en combien de temps, et comment ?")
-+ '<div class="encadre"><strong>Objectifs :</strong> &eacute;crire un objectif clair &bull; savoir r&eacute;agir face au risque</div>'
-+ '<h3>Objectif, strat&eacute;gie, risque</h3>'
-+ '<div class="lexique"><strong>Objectif</strong> &mdash; Ce que vous voulez atteindre. Il doit &ecirc;tre pr&eacute;cis et dat&eacute;.</div>'
-+ '<div class="lexique"><strong>Crit&egrave;res SMART</strong> &mdash; Quatre questions : quoi, faisable, r&eacute;aliste, quand.</div>'
-+ '<div class="lexique"><strong>Strat&eacute;gie</strong> &mdash; La mani&egrave;re de faire pour atteindre l&rsquo;objectif.</div>'
-+ '<div class="lexique"><strong>Risque</strong> &mdash; La possibilit&eacute; que les choses se passent mal.</div>'
-+ '<h3>Les quatre questions SMART</h3>'
-+ '<div class="lexique"><strong>S : Sp&eacute;cifique</strong> &mdash; Quoi, et combien ?</div>'
+MODULES[2] = '<div class="module"><h2>Section 02 &middot; Fixer des objectifs et choisir sa strategie</h2>'
++ salleClasse("Je veux gagner beaucoup d&rsquo;argent tres vite.", "Precise : combien, en combien de temps, et comment ?")
++ '<div class="encadre"><strong>Objectifs :</strong> ecrire un objectif clair &bull; savoir reagir face au risque</div>'
++ '<h3>Objectif, strategie, risque</h3>'
++ '<div class="lexique"><strong>Objectif</strong> &mdash; Ce que vous voulez atteindre. Il doit etre precis et date.</div>'
++ '<div class="lexique"><strong>SMART</strong> &mdash; Specifique, Accessible, Realiste, Temporel.</div>'
++ '<div class="lexique"><strong>Strategie</strong> &mdash; La maniere de faire pour atteindre l&rsquo;objectif.</div>'
++ '<div class="lexique"><strong>Risque</strong> &mdash; La possibilite que les choses se passent mal.</div>'
++ '<h3>Les 4 questions SMART</h3>'
++ '<div class="lexique"><strong>S : Specifique</strong> &mdash; Quoi, et combien ?</div>'
 + '<div class="lexique"><strong>A : Accessible</strong> &mdash; Puis-je le faire avec mes moyens ?</div>'
-+ '<div class="lexique"><strong>R : R&eacute;aliste</strong> &mdash; Le march&eacute; et ma production permettent-ils ?</div>'
-+ '<div class="lexique"><strong>T : Temporel</strong> &mdash; Dans quel d&eacute;lai ?</div>'
-+ '<h3>Trois fa&ccedil;ons de r&eacute;agir au risque</h3>'
-+ '<div class="lexique"><strong>1. Adaptation</strong> &mdash; Changer sa fa&ccedil;on de faire. Ex : baisser un prix.</div>'
-+ '<div class="lexique"><strong>2. Compl&eacute;mentarit&eacute;</strong> &mdash; Faire plusieurs activit&eacute;s qui se soutiennent.</div>'
-+ '<div class="lexique"><strong>3. Retournement</strong> &mdash; Transformer un probl&egrave;me en chance.</div>'
-+ '<h3>Transformer un souhait en objectif SMART</h3>'
-+ '<p><strong>Souhait :</strong> &laquo; Gagner beaucoup d&rsquo;argent. &raquo;</p>'
-+ '<ul><li><strong>Sp&eacute;cifique ?</strong> Non : combien ?</li>'
-+ '<li><strong>Temporel ?</strong> Non : pour quand ?</li>'
-+ '<li><strong>SMART :</strong> &laquo; Vendre 300 t de gari d&rsquo;ici 12 mois. &raquo;</li></ul>'
++ '<div class="lexique"><strong>R : Realiste</strong> &mdash; Le marche et ma production permettent-ils ?</div>'
++ '<div class="lexique"><strong>T : Temporel</strong> &mdash; Dans quel delai ?</div>'
++ '<h3>Trois facons de reagir au risque</h3>'
++ '<div class="lexique"><strong>1. Adaptation</strong> &mdash; Changer sa facon de faire.</div>'
++ '<div class="lexique"><strong>2. Complementarite</strong> &mdash; Faire plusieurs activites qui se soutiennent.</div>'
++ '<div class="lexique"><strong>3. Retournement</strong> &mdash; Transformer un probleme en chance.</div>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">1. L&rsquo;objectif &laquo; Vendre plus bient&ocirc;t &raquo; respecte-t-il SMART ?</div>'
++ '<div class="question"><div class="enonce">1. L&rsquo;objectif Vendre plus bientot respecte-t-il SMART ?</div>'
 + '<div class="choix"><label><input type="radio" name="q2-1" value="A"> A) Oui</label>'
 + '<label><input type="radio" name="q2-1" value="B"> B) Non, il manque S et T</label>'
 + '<label><input type="radio" name="q2-1" value="C"> C) Non, il manque A</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q2-1\', \'B\', \'Plus ne donne aucun chiffre, bientot ne donne aucune date.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierQCM(\'q2-1\', \'B\', \'Plus ne donne aucun chiffre, bientot ne donne aucune date.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q2-1"></div></div>'
-+ '<div class="question"><div class="enonce">2. Un entrepreneur baisse son prix quand un concurrent baisse le sien. Quelle strat&eacute;gie ?</div>'
-+ '<div class="choix"><label><input type="radio" name="q2-2" value="A"> A) Compl&eacute;mentarit&eacute;</label>'
++ '<div class="question"><div class="enonce">2. Un entrepreneur baisse son prix quand un concurrent baisse le sien. Quelle strategie ?</div>'
++ '<div class="choix"><label><input type="radio" name="q2-2" value="A"> A) Complementarite</label>'
 + '<label><input type="radio" name="q2-2" value="B"> B) Retournement</label>'
 + '<label><input type="radio" name="q2-2" value="C"> C) Adaptation</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q2-2\', \'C\', \'Il change sa facon de faire car la situation a change.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierQCM(\'q2-2\', \'C\', \'Il change sa facon de faire car la situation a change.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q2-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m2" onclick="afficherCorrection(\'m2\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m2"><strong>Corrections :</strong><br>1 &rarr; Non, il manque S et T.<br>2 &rarr; L&rsquo;adaptation.</div>'
 + '</div></div>';
 
 MODULES[3] = '<div class="module"><h2>Section 03 &middot; L&rsquo;entrepreneur et l&rsquo;analyse FFOM</h2>'
-+ salleClasse("Mon id&eacute;e est bonne, mais je manque d&rsquo;argent.", "Tes comp&eacute;tences, ton r&eacute;seau et ta motivation comptent aussi.")
-+ '<div class="encadre"><strong>Objectifs :</strong> conna&icirc;tre ses atouts et limites &bull; analyser avec FFOM</div>'
-+ '<h3>Comp&eacute;tence, ressource, r&eacute;seau, FFOM</h3>'
-+ '<div class="lexique"><strong>Comp&eacute;tence</strong> &mdash; Ce que vous savez bien faire.</div>'
++ salleClasse("Mon idee est bonne, mais je manque d&rsquo;argent.", "Tes competences, ton reseau et ta motivation comptent aussi.")
++ '<h3>Competence, ressource, reseau, FFOM</h3>'
++ '<div class="lexique"><strong>Competence</strong> &mdash; Ce que vous savez bien faire.</div>'
 + '<div class="lexique"><strong>Ressource</strong> &mdash; Argent, temps, outils, personnes.</div>'
-+ '<div class="lexique"><strong>R&eacute;seau</strong> &mdash; Les personnes qui peuvent vous aider.</div>'
-+ '<div class="lexique"><strong>FFOM</strong> &mdash; Forces, Faiblesses, Opportunit&eacute;s, Menaces.</div>'
++ '<div class="lexique"><strong>Reseau</strong> &mdash; Les personnes qui peuvent vous aider.</div>'
++ '<div class="lexique"><strong>FFOM</strong> &mdash; Forces, Faiblesses, Opportunites, Menaces.</div>'
 + '<h3>Interne ou externe ?</h3>'
 + '<div class="lexique"><strong>Interne</strong> &mdash; Forces et faiblesses.</div>'
-+ '<div class="lexique"><strong>Externe</strong> &mdash; Opportunit&eacute;s et menaces.</div>'
-+ '<h3>Exemple de grille FFOM</h3>'
-+ '<p><strong>Forces :</strong> je sais fabriquer un gari croustillant.<br>'
-+ '<strong>Faiblesses :</strong> pas de comptabilit&eacute; tenue.<br>'
-+ '<strong>Opportunit&eacute;s :</strong> de plus en plus de familles ach&egrave;tent du gari local.<br>'
-+ '<strong>Menaces :</strong> une grande usine peut baisser ses prix.</p>'
++ '<div class="lexique"><strong>Externe</strong> &mdash; Opportunites et menaces.</div>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">a) Une machine d&eacute;j&agrave; disponible</div>'
++ '<div class="question"><div class="enonce">a) Une machine deja disponible</div>'
 + '<div class="choix"><label><input type="radio" name="q3-1" value="F"> Force</label>'
 + '<label><input type="radio" name="q3-1" value="Fa"> Faiblesse</label>'
-+ '<label><input type="radio" name="q3-1" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-1" value="O"> Opportunite</label>'
 + '<label><input type="radio" name="q3-1" value="M"> Menace</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q3-1\', \'F\', \'Elle depend de vous.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierQCM(\'q3-1\', \'F\', \'Elle depend de vous.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q3-1"></div></div>'
 + '<div class="question"><div class="enonce">b) Un concurrent qui baisse ses prix</div>'
 + '<div class="choix"><label><input type="radio" name="q3-2" value="F"> Force</label>'
 + '<label><input type="radio" name="q3-2" value="Fa"> Faiblesse</label>'
-+ '<label><input type="radio" name="q3-2" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-2" value="O"> Opportunite</label>'
 + '<label><input type="radio" name="q3-2" value="M"> Menace</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q3-2\', \'M\', \'Il est exterieur a vous.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierQCM(\'q3-2\', \'M\', \'Il est exterieur a vous.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q3-2"></div></div>'
-+ '<div class="question"><div class="enonce">c) Une absence de comptabilit&eacute;</div>'
++ '<div class="question"><div class="enonce">c) Une absence de comptabilite</div>'
 + '<div class="choix"><label><input type="radio" name="q3-3" value="F"> Force</label>'
 + '<label><input type="radio" name="q3-3" value="Fa"> Faiblesse</label>'
-+ '<label><input type="radio" name="q3-3" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-3" value="O"> Opportunite</label>'
 + '<label><input type="radio" name="q3-3" value="M"> Menace</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q3-3\', \'Fa\', \'C est vous qui devez la corriger.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierQCM(\'q3-3\', \'Fa\', \'C est vous qui devez la corriger.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q3-3"></div></div>'
 + '<div class="question"><div class="enonce">d) Une hausse de la demande en gari</div>'
 + '<div class="choix"><label><input type="radio" name="q3-4" value="F"> Force</label>'
 + '<label><input type="radio" name="q3-4" value="Fa"> Faiblesse</label>'
-+ '<label><input type="radio" name="q3-4" value="O"> Opportunit&eacute;</label>'
++ '<label><input type="radio" name="q3-4" value="O"> Opportunite</label>'
 + '<label><input type="radio" name="q3-4" value="M"> Menace</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q3-4\', \'O\', \'Elle vient du marche.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierQCM(\'q3-4\', \'O\', \'Elle vient du marche.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q3-4"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m3" onclick="afficherCorrection(\'m3\')">&#128214; Voir la correction</button>'
-+ '<div class="correction" id="correction-m3"><strong>Corrections :</strong><br>a &rarr; Force<br>b &rarr; Menace<br>c &rarr; Faiblesse<br>d &rarr; Opportunit&eacute;</div>'
++ '<div class="correction" id="correction-m3"><strong>Corrections :</strong><br>a &rarr; Force<br>b &rarr; Menace<br>c &rarr; Faiblesse<br>d &rarr; Opportunite</div>'
 + '</div></div>';
-MODULES[4] = '<div class="module"><h2>Section 04 &middot; &Eacute;tudier le march&eacute;</h2>'
-+ salleClasse("Personne ne vend &ccedil;a ici, c&rsquo;est parfait !", "Justement, v&eacute;rifions d&rsquo;abord qu&rsquo;il existe une vraie demande.")
-+ '<div class="encadre"><strong>Objectifs :</strong> savoir qui ach&egrave;te &bull; calculer sa part de march&eacute;</div>'
-+ '<h3>Afi et Ay&eacute;l&eacute; : deux produits, une m&ecirc;me racine</h3>'
-+ '<p>Afi fait du <strong>gari</strong>. Ay&eacute;l&eacute; fait du <strong>tapioca</strong>.</p>'
+MODULES[4] = '<div class="module"><h2>Section 04 &middot; Etudier le marche</h2>'
++ salleClasse("Personne ne vend ca ici, c&rsquo;est parfait !", "Justement, verifions d&rsquo;abord qu&rsquo;il existe une vraie demande.")
++ '<h3>Afi et Ayele : deux produits, une meme racine</h3>'
++ '<p>Afi fait du <strong>gari</strong>. Ayele fait du <strong>tapioca</strong>.</p>'
 + '<ul><li><strong>Gari :</strong> 12 000 t &times; 25 % = 3 000 t</li>'
-+ '<li><strong>D&eacute;j&agrave; transform&eacute; :</strong> 2 400 t &rarr; r&eacute;siduel 600 t</li>'
-+ '<li><strong>Tapioca :</strong> 300 t potentielles, 60 t transform&eacute;es &rarr; niche 240 t</li></ul>'
-+ '<h3>March&eacute;, concurrence, niche, part</h3>'
-+ '<div class="lexique"><strong>March&eacute; total</strong> &mdash; Toute la quantit&eacute; vendable.</div>'
++ '<li><strong>Deja transforme :</strong> 2 400 t &rarr; residuel 600 t</li>'
++ '<li><strong>Tapioca :</strong> 300 t potentielles, 60 t transformees &rarr; niche 240 t</li></ul>'
++ '<h3>Marche, concurrence, niche, part</h3>'
++ '<div class="lexique"><strong>Marche total</strong> &mdash; Toute la quantite vendable.</div>'
 + '<div class="lexique"><strong>Concurrence</strong> &mdash; Les autres entreprises.</div>'
-+ '<div class="lexique"><strong>March&eacute; r&eacute;siduel</strong> &mdash; La partie non occup&eacute;e.</div>'
-+ '<div class="lexique"><strong>Part de march&eacute;</strong> &mdash; La portion que vous contr&ocirc;lez.</div>'
-+ '<h3>Commen&ccedil;ons petit : 100 kg de manioc</h3>'
++ '<div class="lexique"><strong>Marche residuel</strong> &mdash; La partie non occupee.</div>'
++ '<div class="lexique"><strong>Part de marche</strong> &mdash; La portion que vous controlez.</div>'
++ '<h3>Commencons petit : 100 kg de manioc</h3>'
 + '<p>100 kg de racines &rarr; Transformation &rarr; <strong>25 kg</strong> de gari. Rendement : 25 kg sur 100 kg.</p>'
-+ '<h3>De 100 kg &agrave; 12 000 tonnes</h3>'
++ '<h3>De 100 kg a 12 000 tonnes</h3>'
 + '<ul><li><strong>1 tonne</strong> = 1 000 kg</li>'
 + '<li><strong>12 000 t</strong> de racines par an</li>'
 + '<li><strong>3 000 t</strong> de gari : 12 000 &times; 25 &divide; 100</li></ul>'
 + '<h3>Les concurrents</h3>'
 + '<ul><li><strong>8 artisans</strong> : 8 &times; 200 = 1 600 t</li>'
-+ '<li><strong>1 grande unit&eacute;</strong> : 800 t</li>'
++ '<li><strong>1 grande unite</strong> : 800 t</li>'
 + '<li><strong>Total : 2 400 t</strong></li></ul>'
-+ '<h3>Le march&eacute; r&eacute;siduel</h3>'
-+ '<p>3 000 &minus; 2 400 = <strong>600 t</strong> &agrave; conqu&eacute;rir.</p>'
-+ '<h3>Votre part de march&eacute;</h3>'
++ '<h3>Le marche residuel</h3>'
++ '<p>3 000 &minus; 2 400 = <strong>600 t</strong> a conquerir.</p>'
++ '<h3>Votre part de marche</h3>'
 + '<p>10 bols sur 100 = 10 &divide; 100 &times; 100 = <strong>10 %</strong>.</p>'
-+ '<h3>Les 4 calculs du march&eacute;</h3>'
-+ '<ol><li>March&eacute; total = quantit&eacute; &times; rendement</li>'
-+ '<li>March&eacute; r&eacute;siduel = total &minus; d&eacute;j&agrave; transform&eacute;</li>'
-+ '<li>Objectif r&eacute;aliste = % du march&eacute;</li>'
-+ '<li>Part de march&eacute; = vendu &divide; total &times; 100</li></ol>'
 + '<div class="jeu"><h3>Exercice</h3>'
 + '<div class="question"><div class="enonce">1. 12 000 t x 25 % = ? (tonnes)</div>'
 + '<input type="number" id="in-q4-1" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q4-1\', 3000, \'3 000 tonnes.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q4-1\', 3000, \'3 000 tonnes.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q4-1"></div></div>'
-+ '<div class="question"><div class="enonce">2. 3 000 &minus; 2 400 = ? (tonnes)</div>'
++ '<div class="question"><div class="enonce">2. 3 000 - 2 400 = ? (tonnes)</div>'
 + '<input type="number" id="in-q4-2" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q4-2\', 600, \'600 tonnes.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q4-2\', 600, \'600 tonnes.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q4-2"></div></div>'
-+ '<div class="question"><div class="enonce">3. 300 &divide; 3 000 &times; 100 = ? (%)</div>'
++ '<div class="question"><div class="enonce">3. 300 / 3 000 x 100 = ? (%)</div>'
 + '<input type="number" id="in-q4-3" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q4-3\', 10, \'10 %.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q4-3\', 10, \'10 %.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q4-3"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m4" onclick="afficherCorrection(\'m4\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m4"><strong>Corrections :</strong><br>1 &rarr; 3 000 t<br>2 &rarr; 600 t<br>3 &rarr; 10 %</div>'
 + '</div></div>';
 
-MODULES[5] = '<div class="module"><h2>Section 05 &middot; Cha&icirc;ne de production</h2>'
-+ salleClasse("Combien de machines dois-je acheter ?", "Calcule la capacit&eacute; de chaque &eacute;tape.")
-+ '<div class="encadre"><strong>Objectifs :</strong> comprendre les &eacute;tapes &bull; trouver le goulot</div>'
-+ '<h3>&Eacute;tape, capacit&eacute;, goulot</h3>'
-+ '<div class="lexique"><strong>Cha&icirc;ne</strong> &mdash; Toutes les &eacute;tapes travers&eacute;es.</div>'
-+ '<div class="lexique"><strong>Capacit&eacute;</strong> &mdash; Ce qu&rsquo;une machine peut traiter (T/H).</div>'
-+ '<div class="lexique"><strong>Goulot</strong> &mdash; L&rsquo;&eacute;tape la plus lente.</div>'
-+ '<div class="lexique"><strong>Capacit&eacute; journali&egrave;re</strong> &mdash; Goulot &times; heures.</div>'
-+ '<h3>Une cha&icirc;ne de 8 heures</h3>'
-+ '<ul><li>R&acirc;peuse : 0,5 T/H</li><li>Tamiseur : 0,7 T/H</li><li>2 presses : 0,4 T/H</li>'
+MODULES[5] = '<div class="module"><h2>Section 05 &middot; Chaine de production</h2>'
++ salleClasse("Combien de machines dois-je acheter ?", "Calcule la capacite de chaque etape.")
++ '<h3>Etape, capacite, goulot</h3>'
++ '<div class="lexique"><strong>Chaine</strong> &mdash; Toutes les etapes traversees.</div>'
++ '<div class="lexique"><strong>Capacite</strong> &mdash; Ce qu&rsquo;une machine peut traiter (T/H).</div>'
++ '<div class="lexique"><strong>Goulot</strong> &mdash; L&rsquo;etape la plus lente.</div>'
++ '<h3>Une chaine de 8 heures</h3>'
++ '<ul><li>Rapeuse : 0,5 T/H</li><li>Tamiseur : 0,7 T/H</li><li>2 presses : 0,4 T/H</li>'
 + '<li><strong>Goulot :</strong> les presses</li>'
 + '<li><strong>Production :</strong> 0,4 &times; 8 = 3,2 t/jour</li></ul>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">Capacit&eacute; journali&egrave;re (tonnes) ?</div>'
++ '<div class="question"><div class="enonce">Capacite journaliere (tonnes) ?</div>'
 + '<input type="number" id="in-q5-2" placeholder="Votre reponse" step="0.1"><br>'
-+ '<button class="action" onclick="verifierNum(\'q5-2\', 3.2, \'0,4 x 8 = 3,2.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q5-2\', 3.2, \'0,4 x 8 = 3,2.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q5-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m5" onclick="afficherCorrection(\'m5\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m5"><strong>Correction :</strong> 3,2 t/jour</div>'
 + '</div></div>';
 
 MODULES[6] = '<div class="module"><h2>Section 06 &middot; Choisir les machines</h2>'
-+ salleClasse("Quelle machine dois-je acheter ?", "Choisis selon la quantit&eacute; et le budget.")
-+ '<div class="encadre"><strong>Objectifs :</strong> choisir une machine par &eacute;tape &bull; calculer le co&ucirc;t</div>'
++ salleClasse("Quelle machine dois-je acheter ?", "Choisis selon la quantite et le budget.")
 + '<h3>Trois niveaux de machines</h3>'
 + '<div class="lexique"><strong>Manuel</strong> &mdash; Peu cher, lent.</div>'
 + '<div class="lexique"><strong>Semi-industriel</strong> &mdash; Bon compromis.</div>'
-+ '<div class="lexique"><strong>Industriel</strong> &mdash; Tr&egrave;s cher, gros volumes.</div>'
++ '<div class="lexique"><strong>Industriel</strong> &mdash; Tres cher, gros volumes.</div>'
 + '<h3>La liste pour Afi</h3>'
-+ '<ul><li>R&acirc;peuse : 1 200 000 FCFA</li>'
++ '<ul><li>Rapeuse : 1 200 000 FCFA</li>'
 + '<li>Presses : 2 &times; 7 000 000 = 14 000 000 FCFA</li>'
 + '<li>Tamiseur : 1 600 000 FCFA</li>'
-+ '<li>Torr&eacute;facteur : 900 000 FCFA</li>'
++ '<li>Torrefacteur : 900 000 FCFA</li>'
 + '<li><strong>Total : 17 700 000 FCFA</strong></li></ul>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">Co&ucirc;t total des &eacute;quipements ? (FCFA)</div>'
++ '<div class="question"><div class="enonce">Cout total des equipements ? (FCFA)</div>'
 + '<input type="number" id="in-q6-2" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q6-2\', 17700000, \'17 700 000 FCFA.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q6-2\', 17700000, \'17 700 000 FCFA.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q6-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m6" onclick="afficherCorrection(\'m6\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m6"><strong>Correction :</strong> 17 700 000 FCFA</div>'
 + '</div></div>';
 
 MODULES[7] = '<div class="module"><h2>Section 07 &middot; Organisation et personnel</h2>'
-+ salleClasse("Qui va travailler avec moi ?", "Calcule les ouvriers et op&eacute;rateurs.")
-+ '<div class="encadre"><strong>Objectifs :</strong> calculer le co&ucirc;t des ouvriers &bull; organiser</div>'
++ salleClasse("Qui va travailler avec moi ?", "Calcule les ouvriers et operateurs.")
 + '<h3>Personnel et salaires</h3>'
 + '<div class="lexique"><strong>Ouvrier</strong> &mdash; 3 000 FCFA/jour.</div>'
-+ '<div class="lexique"><strong>Op&eacute;rateur</strong> &mdash; 10 000 FCFA/jour. 2 machines max.</div>'
-+ '<h3>Le calcul pour 3 ouvriers et 2 op&eacute;rateurs</h3>'
-+ '<ul><li>Ouvriers : 3 &times; 3 000 = 9 000</li><li>Op&eacute;rateurs : 2 &times; 10 000 = 20 000</li>'
++ '<div class="lexique"><strong>Operateur</strong> &mdash; 10 000 FCFA/jour. 2 machines max.</div>'
++ '<h3>Le calcul pour 3 ouvriers et 2 operateurs</h3>'
++ '<ul><li>Ouvriers : 3 &times; 3 000 = 9 000</li><li>Operateurs : 2 &times; 10 000 = 20 000</li>'
 + '<li>Total/jour : 29 000</li><li>Total/mois : 29 000 &times; 26 = 754 000 FCFA</li></ul>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">Co&ucirc;t mensuel (FCFA) ?</div>'
++ '<div class="question"><div class="enonce">Cout mensuel (FCFA) ?</div>'
 + '<input type="number" id="in-q7-1" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q7-1\', 754000, \'754 000 FCFA.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q7-1\', 754000, \'754 000 FCFA.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q7-1"></div></div>'
-+ '<div class="question"><div class="enonce">Combien d&rsquo;op&eacute;rateurs pour 5 machines ?</div>'
++ '<div class="question"><div class="enonce">Combien d&rsquo;operateurs pour 5 machines ?</div>'
 + '<input type="number" id="in-q7-2" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q7-2\', 3, \'5 / 2 = 2,5 : arrondi a 3.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q7-2\', 3, \'5 / 2 = 2,5 : arrondi a 3.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q7-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m7" onclick="afficherCorrection(\'m7\')">&#128214; Voir la correction</button>'
-+ '<div class="correction" id="correction-m7"><strong>Corrections :</strong><br>1 &rarr; 754 000 FCFA<br>2 &rarr; 3 op&eacute;rateurs</div>'
++ '<div class="correction" id="correction-m7"><strong>Corrections :</strong><br>1 &rarr; 754 000 FCFA<br>2 &rarr; 3 operateurs</div>'
 + '</div></div>';
-MODULES[8] = '<div class="module"><h2>Section 08 &middot; Co&ucirc;ts et financement du projet</h2>'
-+ salleClasse("Combien il me faut pour d&eacute;marrer ?", "Investissement + fonds de roulement = co&ucirc;t du projet.")
-+ '<div class="encadre"><strong>Objectifs :</strong> chiffrer le co&ucirc;t total &bull; trouver l&rsquo;argent</div>'
-+ '<h3>Investissement, financement</h3>'
+MODULES[8] = '<div class="module"><h2>Section 08 &middot; Couts et financement du projet</h2>'
++ salleClasse("Combien il me faut pour demarrer ?", "Investissement + fonds de roulement = cout du projet.")
++ '<h3>Les deux couts du projet</h3>'
 + '<div class="lexique"><strong>Investissement</strong> &mdash; Machines et outils. Une fois.</div>'
-+ '<div class="lexique"><strong>Fonds de roulement</strong> &mdash; Pour d&eacute;marrer.</div>'
++ '<div class="lexique"><strong>Fonds de roulement</strong> &mdash; Pour demarrer.</div>'
 + '<div class="lexique"><strong>Apport personnel</strong> &mdash; Votre argent.</div>'
-+ '<div class="lexique"><strong>Cr&eacute;dit</strong> &mdash; Argent emprunt&eacute;.</div>'
-+ '<h3>Un projet &agrave; 25 millions</h3>'
++ '<div class="lexique"><strong>Credit</strong> &mdash; Argent emprunte.</div>'
++ '<h3>Un projet a 25 millions</h3>'
 + '<ul><li>Investissement : 20 000 000</li><li>Fonds de roulement : 5 000 000</li>'
-+ '<li>Co&ucirc;t : 25 000 000 FCFA</li><li>Apport 40 % : 10 000 000</li>'
++ '<li>Cout : 25 000 000 FCFA</li><li>Apport 40 % : 10 000 000</li>'
 + '<li>Reste : 15 000 000 FCFA</li></ul>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">1. Co&ucirc;t du projet (20M + 5M) ? (FCFA)</div>'
++ '<div class="question"><div class="enonce">1. Cout du projet (20M + 5M) ? (FCFA)</div>'
 + '<input type="number" id="in-q8-1" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q8-1\', 25000000, \'25 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q8-1\', 25000000, \'25 000 000 FCFA.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q8-1"></div></div>'
-+ '<div class="question"><div class="enonce">2. Reste &agrave; financer (60 %) ? (FCFA)</div>'
++ '<div class="question"><div class="enonce">2. Reste a financer (60 %) ? (FCFA)</div>'
 + '<input type="number" id="in-q8-2" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q8-2\', 15000000, \'15 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q8-2\', 15000000, \'15 000 000 FCFA.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q8-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m8" onclick="afficherCorrection(\'m8\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m8"><strong>Corrections :</strong><br>1 &rarr; 25 000 000 FCFA<br>2 &rarr; 15 000 000 FCFA</div>'
 + '</div></div>';
 
-MODULES[9] = '<div class="module"><h2>Section 09 &middot; Seuil de rentabilit&eacute;</h2>'
-+ salleClasse("Combien dois-je vendre pour ne pas perdre ?", "C&rsquo;est ton seuil de rentabilit&eacute;.")
-+ '<div class="encadre"><strong>Objectifs :</strong> charges fixes vs variables &bull; calculer le seuil</div>'
+MODULES[9] = '<div class="module"><h2>Section 09 &middot; Seuil de rentabilite</h2>'
++ salleClasse("Combien dois-je vendre pour ne pas perdre ?", "C&rsquo;est ton seuil de rentabilite.")
 + '<h3>CA, CF, CV, seuil</h3>'
-+ '<div class="lexique"><strong>CA</strong> &mdash; Quantit&eacute; &times; prix.</div>'
++ '<div class="lexique"><strong>CA</strong> &mdash; Quantite &times; prix.</div>'
 + '<div class="lexique"><strong>Charges fixes</strong> &mdash; Loyer, salaires fixes.</div>'
 + '<div class="lexique"><strong>Charges variables</strong> &mdash; Augmentent avec la production.</div>'
-+ '<div class="lexique"><strong>Seuil</strong> &mdash; Niveau o&ugrave; on ne perd plus.</div>'
-+ '<h3>Calcul du seuil</h3>'
-+ '<ol><li>Marge = prix &minus; CV</li><li>Seuil quantit&eacute; = CF &divide; marge</li>'
-+ '<li>Seuil argent = seuil &times; prix</li></ol>'
++ '<div class="lexique"><strong>Seuil</strong> &mdash; Niveau ou on ne perd plus.</div>'
 + '<h3>Exemple gari</h3>'
 + '<ul><li>CF : 1 000 000/mois</li><li>Prix : 1 500/kg</li><li>CV : 1 000/kg</li>'
 + '<li>Marge : 500/kg</li><li>Seuil : 2 000 kg</li><li>Seuil argent : 3 000 000 FCFA</li></ul>'
 + '<div class="jeu"><h3>Exercice</h3>'
 + '<div class="question"><div class="enonce">1. Seuil en kilos ?</div>'
 + '<input type="number" id="in-q9-1" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q9-1\', 2000, \'2 000 kg.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q9-1\', 2000, \'2 000 kg.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q9-1"></div></div>'
 + '<div class="question"><div class="enonce">2. Seuil en argent (FCFA) ?</div>'
 + '<input type="number" id="in-q9-2" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q9-2\', 3000000, \'3 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q9-2\', 3000000, \'3 000 000 FCFA.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q9-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m9" onclick="afficherCorrection(\'m9\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m9"><strong>Corrections :</strong><br>1 &rarr; 2 000 kg<br>2 &rarr; 3 000 000 FCFA</div>'
 + '</div></div>';
 
-MODULES[10] = '<div class="module"><h2>Section 10 &middot; R&eacute;sultats et remboursement</h2>'
-+ salleClasse("Mon projet gagne : je peux rembourser ?", "Regarde le r&eacute;sultat net.")
-+ '<div class="encadre"><strong>Objectifs :</strong> calculer le r&eacute;sultat &bull; v&eacute;rifier le remboursement</div>'
-+ '<h3>R&eacute;sultat, int&eacute;r&ecirc;t, remboursement</h3>'
-+ '<div class="lexique"><strong>R&eacute;sultat brut</strong> &mdash; CA &minus; d&eacute;penses &minus; amortissements.</div>'
-+ '<div class="lexique"><strong>Int&eacute;r&ecirc;t</strong> &mdash; Prix pay&eacute; &agrave; la banque.</div>'
-+ '<div class="lexique"><strong>R&eacute;sultat avant imp&ocirc;t</strong> &mdash; Brut &minus; int&eacute;r&ecirc;ts.</div>'
+MODULES[10] = '<div class="module"><h2>Section 10 &middot; Resultats et remboursement</h2>'
++ salleClasse("Mon projet gagne : je peux rembourser ?", "Regarde le resultat net.")
++ '<h3>Resultat, interet, remboursement</h3>'
++ '<div class="lexique"><strong>Resultat brut</strong> &mdash; CA &minus; depenses &minus; amortissements.</div>'
++ '<div class="lexique"><strong>Interet</strong> &mdash; Prix paye a la banque.</div>'
++ '<div class="lexique"><strong>Resultat avant impot</strong> &mdash; Brut &minus; interets.</div>'
 + '<h3>Exemple</h3>'
-+ '<ul><li>CA : 4 000 000</li><li>D&eacute;penses : 2 500 000</li><li>Amortissements : 300 000</li>'
-+ '<li>Int&eacute;r&ecirc;ts : 200 000</li>'
-+ '<li>R&eacute;sultat brut : 1 200 000 FCFA</li>'
-+ '<li>R&eacute;sultat avant imp&ocirc;t : 1 000 000 FCFA</li></ul>'
++ '<ul><li>CA : 4 000 000</li><li>Depenses : 2 500 000</li><li>Amortissements : 300 000</li>'
++ '<li>Interets : 200 000</li>'
++ '<li>Resultat brut : 1 200 000 FCFA</li>'
++ '<li>Resultat avant impot : 1 000 000 FCFA</li></ul>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">1. R&eacute;sultat brut ? (FCFA)</div>'
++ '<div class="question"><div class="enonce">1. Resultat brut ? (FCFA)</div>'
 + '<input type="number" id="in-q10-1" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q10-1\', 1200000, \'1 200 000 FCFA.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q10-1\', 1200000, \'1 200 000 FCFA.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q10-1"></div></div>'
-+ '<div class="question"><div class="enonce">2. R&eacute;sultat avant imp&ocirc;t ? (FCFA)</div>'
++ '<div class="question"><div class="enonce">2. Resultat avant impot ? (FCFA)</div>'
 + '<input type="number" id="in-q10-2" placeholder="Votre reponse"><br>'
-+ '<button class="action" onclick="verifierNum(\'q10-2\', 1000000, \'1 000 000 FCFA.\')">V&eacute;rifier</button>'
++ '<button class="action" onclick="verifierNum(\'q10-2\', 1000000, \'1 000 000 FCFA.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q10-2"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m10" onclick="afficherCorrection(\'m10\')">&#128214; Voir la correction</button>'
 + '<div class="correction" id="correction-m10"><strong>Corrections :</strong><br>1 &rarr; 1 200 000 FCFA<br>2 &rarr; 1 000 000 FCFA</div>'
 + '</div></div>';
 
-MODULES[11] = '<div class="module"><h2>Section 11 &middot; Conclure et d&eacute;cider</h2>'
-+ salleClasse("Mon plan est termin&eacute;, on lance ?", "Relis tes indicateurs d&rsquo;abord.")
-+ '<div class="encadre"><strong>Objectifs :</strong> r&eacute;sumer &bull; prendre une d&eacute;cision</div>'
-+ '<h3>Synth&egrave;se, vigilance, d&eacute;cision</h3>'
-+ '<div class="lexique"><strong>Synth&egrave;se</strong> &mdash; R&eacute;sum&eacute; des chiffres importants.</div>'
-+ '<div class="lexique"><strong>Point de vigilance</strong> &mdash; &Eacute;l&eacute;ment fragile.</div>'
-+ '<div class="lexique"><strong>Recommandation</strong> &mdash; Lancer, ajuster ou abandonner.</div>'
-+ '<h3>Prendre la d&eacute;cision</h3>'
-+ '<ul><li><strong>Positif ?</strong> Pr&eacute;parez le financement.</li>'
-+ '<li><strong>N&eacute;gatif ?</strong> Revoyez prix, co&ucirc;ts ou volume.</li>'
-+ '<li><strong>Doutes ?</strong> Testez &agrave; petite &eacute;chelle.</li></ul>'
+MODULES[11] = '<div class="module"><h2>Section 11 &middot; Conclure et decider</h2>'
++ salleClasse("Mon plan est termine, on lance ?", "Relis tes indicateurs d&rsquo;abord.")
++ '<h3>Prendre la decision</h3>'
++ '<ul><li><strong>Positif ?</strong> Preparez le financement.</li>'
++ '<li><strong>Negatif ?</strong> Revoyez prix, couts ou volume.</li>'
++ '<li><strong>Doutes ?</strong> Testez a petite echelle.</li></ul>'
 + '<div class="jeu"><h3>Exercice</h3>'
-+ '<div class="question"><div class="enonce">R&eacute;sultat &minus;400 000 FCFA/mois. D&eacute;cision ?</div>'
++ '<div class="question"><div class="enonce">Resultat -400 000 FCFA/mois. Decision ?</div>'
 + '<div class="choix"><label><input type="radio" name="q11-1" value="A"> A) Lancer</label>'
 + '<label><input type="radio" name="q11-1" value="B"> B) Emprunter plus</label>'
-+ '<label><input type="radio" name="q11-1" value="C"> C) Revoir prix, co&ucirc;ts ou volume</label></div>'
-+ '<button class="action" onclick="verifierQCM(\'q11-1\', \'C\', \'Corriger avant de depenser davantage.\')">V&eacute;rifier</button>'
++ '<label><input type="radio" name="q11-1" value="C"> C) Revoir prix, couts ou volume</label></div>'
++ '<button class="action" onclick="verifierQCM(\'q11-1\', \'C\', \'Corriger avant de depenser davantage.\')">Verifier</button>'
 + '<div class="feedback" id="fb-q11-1"></div></div>'
 + '<button class="btn-correction" id="btn-corr-m11" onclick="afficherCorrection(\'m11\')">&#128214; Voir la correction</button>'
-+ '<div class="correction" id="correction-m11"><strong>Correction :</strong> C &mdash; Revoir prix, co&ucirc;ts ou volume.</div>'
++ '<div class="correction" id="correction-m11"><strong>Correction :</strong> C &mdash; Revoir prix, couts ou volume.</div>'
 + '</div></div>';
-MODULES[13] = '<div class="module"><h2>&#128196; Documents &agrave; t&eacute;l&eacute;charger</h2>'
-+ '<p>Retrouvez ici les documents Word pour vous aider &agrave; r&eacute;diger votre plan d&rsquo;affaires.</p>'
-+ '<div class="telecharger-bloc">'
-+ '<h3>&#128202; &Eacute;tude de march&eacute;</h3>'
-+ '<p>Analyse &amp; Strat&eacute;gie commerciale : part de march&eacute;, strat&eacute;gie marketing 5P, perspectives.</p>'
-+ '<a href="%C3%A9tude_marche.docx" download class="btn-simulateur" style="background:linear-gradient(135deg,#059669,#047857);">&#128229; T&eacute;l&eacute;charger l&rsquo;&eacute;tude de march&eacute;</a>'
-+ '</div>'
-+ '<div class="telecharger-bloc">'
-+ '<h3>&#128295; &Eacute;tude technique</h3>'
-+ '<p>Document de faisabilit&eacute; : mobiliers, &eacute;quipements, mati&egrave;res, cycle de production, personnel.</p>'
-+ '<a href="%C3%A9tude_technique.docx" download class="btn-simulateur" style="background:linear-gradient(135deg,#1a237e,#283593);">&#128229; T&eacute;l&eacute;charger l&rsquo;&eacute;tude technique</a>'
-+ '</div>'
-+ '</div>';
 
 MODULES[12] = '<div class="module"><h2>&#128176; Simulateur de Plan d&rsquo;Affaires</h2>'
-+ '<p>Gr&acirc;ce au simulateur Google Sheets, vous pouvez construire votre plan d&rsquo;affaires complet avec calculs automatiques.</p>'
++ '<p>Grace au simulateur Google Sheets, vous pouvez construire votre plan d&rsquo;affaires complet avec calculs automatiques.</p>'
 + '<div class="telecharger-bloc">'
 + '<h3>Votre simulateur personnel Google Sheets</h3>'
-+ '<p>Un fichier Google Sheets a &eacute;t&eacute; cr&eacute;&eacute; sp&eacute;cialement pour vous lors de votre inscription.</p>'
-+ '<p style="margin-top:15px;"><strong>Comment y acc&eacute;der :</strong></p>'
++ '<p>Un fichier Google Sheets a ete cree specialement pour vous lors de votre inscription.</p>'
++ '<p style="margin-top:15px;"><strong>Comment y acceder :</strong></p>'
 + '<ol style="text-align:left;display:inline-block;margin-top:10px;">'
-+ '<li>V&eacute;rifiez votre bo&icirc;te email</li>'
++ '<li>Verifiez votre boite email</li>'
 + '<li>Cherchez le message de partage Google Drive</li>'
-+ '<li>Ouvrez le fichier et commencez &agrave; remplir</li>'
-+ '<li><strong>Rappel : votre acc&egrave;s est valable 3 mois</strong></li></ol>'
++ '<li>Ouvrez le fichier et commencez a remplir</li>'
++ '<li><strong>Rappel : votre acces est valable 3 mois</strong></li></ol>'
 + '<br><a href="https://drive.google.com/drive/folders/19ZC1rm-Xc4yKVJ_dbf9O9mVRzV0K_Xng" target="_blank" class="btn-simulateur">&#128202; Ouvrir mon simulateur Google Sheets</a>'
 + '</div>'
 + '<div class="encadre"><strong>Besoin d&rsquo;aide ?</strong> Contactez votre formateur.</div>'
 + '</div>';
 
-// ==================== FONCTION AFFICHER CORRECTION ====================
-function afficherCorrection(id) {
-  var c = document.getElementById('correction-' + id);
-  if (!c) return;
-  c.classList.toggle('visible');
-  var btn = document.getElementById('btn-corr-' + id);
-  if (btn) {
-    if (c.classList.contains('visible')) btn.textContent = '🙈 Masquer la correction';
-    else btn.textContent = '📖 Voir la correction';
-  }
-}
-// ==================== AFFICHAGE ====================
+MODULES[13] = '<div class="module"><h2>&#128196; Documents a telecharger</h2>'
++ '<p>Retrouvez ici les documents Word pour vous aider a rediger votre plan d&rsquo;affaires.</p>'
++ '<div class="telecharger-bloc">'
++ '<h3>&#128202; Etude de marche</h3>'
++ '<p>Analyse &amp; Strategie commerciale : part de marche, strategie marketing 5P, perspectives.</p>'
++ '<a href="%C3%A9tude_marche.docx" download class="btn-simulateur" style="background:linear-gradient(135deg,#059669,#047857);">&#128229; Telecharger l&rsquo;etude de marche</a>'
++ '</div>'
++ '<div class="telecharger-bloc">'
++ '<h3>&#128295; Etude technique</h3>'
++ '<p>Document de faisabilite : mobiliers, equipements, matieres, cycle de production, personnel.</p>'
++ '<a href="%C3%A9tude_technique.docx" download class="btn-simulateur" style="background:linear-gradient(135deg,#1a237e,#283593);">&#128229; Telecharger l&rsquo;etude technique</a>'
++ '</div>'
++ '</div>';
+
+// ==================== FONCTIONS ====================
 function afficherModule(numero) {
   var zone = document.getElementById('zone-contenu');
   if (!zone) return;
@@ -622,7 +579,17 @@ function afficherModule(numero) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ==================== QUIZ ====================
+function afficherCorrection(id) {
+  var c = document.getElementById('correction-' + id);
+  if (!c) return;
+  c.classList.toggle('visible');
+  var btn = document.getElementById('btn-corr-' + id);
+  if (btn) {
+    if (c.classList.contains('visible')) btn.textContent = '🙈 Masquer la correction';
+    else btn.textContent = '📖 Voir la correction';
+  }
+}
+
 function verifierQCM(id, bonne, expl) {
   var radios = document.querySelectorAll('input[name="' + id + '"]');
   var choix = null;
@@ -633,6 +600,7 @@ function verifierQCM(id, bonne, expl) {
   if (choix === bonne) { fb.className = 'feedback bon'; fb.innerHTML = 'Bonne reponse ! ' + expl; }
   else { fb.className = 'feedback mauvais'; fb.innerHTML = 'Mauvaise reponse. Bonne : <strong>' + bonne + '</strong>.<br>' + expl; }
 }
+
 function verifierNum(id, bonne, expl) {
   var input = document.getElementById('in-' + id);
   var fb = document.getElementById('fb-' + id);
@@ -643,7 +611,6 @@ function verifierNum(id, bonne, expl) {
   else { fb.className = 'feedback mauvais'; fb.innerHTML = 'Bonne reponse : <strong>' + bonne + '</strong>.<br>' + expl; }
 }
 
-// ==================== ADMIN ====================
 function ouvrirAdmin() {
   document.getElementById('page-admin').style.display = 'block';
   document.getElementById('admin-panneau').classList.add('cache');
@@ -680,7 +647,6 @@ function changerCode() {
   setTimeout(function() { s.style.display = 'none'; }, 3000);
 }
 
-// ==================== ADMIN - GOOGLE ====================
 function chargerUtilisateurs() {
   var zone = document.getElementById('liste-apprenants');
   zone.innerHTML = '<p style="color:#1a237e;">Chargement...</p>';
@@ -703,6 +669,7 @@ function chargerUtilisateurs() {
       zone.innerHTML = '<p style="color:#dc2626;font-size:13px;">Erreur de connexion.</p>';
     });
 }
+
 function chargerDemandes() {
   var zone = document.getElementById('liste-demandes');
   zone.innerHTML = '<p style="color:#1a237e;">Chargement...</p>';
@@ -725,6 +692,7 @@ function chargerDemandes() {
       zone.innerHTML = '<p style="color:#dc2626;font-size:13px;">Erreur de connexion.</p>';
     });
 }
+
 function reinitialiser(email, bouton) {
   if (!confirm('Generer un nouveau mot de passe pour ' + email + ' ?')) return;
   bouton.disabled = true;
@@ -749,11 +717,11 @@ function reinitialiser(email, bouton) {
     });
 }
 
-// ==================== AUTH ====================
 function basculerMode() {
   document.getElementById('box-connexion').classList.toggle('cache');
   document.getElementById('box-login').classList.toggle('cache');
 }
+
 function sInscrire() {
   var n = document.getElementById('login-nom').value.trim();
   var e = document.getElementById('login-email').value.trim();
@@ -781,6 +749,7 @@ function sInscrire() {
     er.style.display = 'block'; er.textContent = 'Erreur de connexion au serveur.';
   });
 }
+
 function seConnecter() {
   var e = document.getElementById('co-email').value.trim();
   var m = document.getElementById('co-mdp').value;
@@ -801,6 +770,7 @@ function seConnecter() {
     er.style.display = 'block'; er.textContent = 'Erreur de connexion.';
   });
 }
+
 function motDePasseOublie() {
   var email = prompt('Entrez votre email pour demander un nouveau mot de passe :');
   if (!email) return;
@@ -817,12 +787,14 @@ function motDePasseOublie() {
     alert('Erreur de connexion. Reessayez.');
   });
 }
+
 function entrerPlateforme(nom) {
   document.getElementById('page-auth').classList.add('cache');
   document.getElementById('plateforme').classList.remove('cache');
   document.getElementById('nom-user').textContent = nom;
   afficherModule(0);
 }
+
 function deconnexion() {
   if (!confirm('Se deconnecter ?')) return;
   localStorage.removeItem('utilisateur_actuel');
@@ -832,7 +804,6 @@ function deconnexion() {
   document.getElementById('box-login').classList.add('cache');
 }
 
-// ==================== INIT ====================
 window.addEventListener('load', function() {
   if (window.location.hash === '#admin') ouvrirAdmin();
   document.addEventListener('keydown', function(e) {
